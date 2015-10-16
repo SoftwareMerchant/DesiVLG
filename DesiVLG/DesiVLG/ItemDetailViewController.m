@@ -50,8 +50,7 @@
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
 //    NSString *removeSQL = @"drop table cart";
 //    [self.dbManager executeQuery:removeSQL];
-    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART "
-    "(ITEM TEXT PRIMARY KEY, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
+    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
     [self.dbManager executeQuery:createSQL];
     
     UITapGestureRecognizer * tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(processTap)];
@@ -83,7 +82,7 @@
 */
 
 - (IBAction)addInCartTap:(id)sender {
-    NSString *query = [NSString stringWithFormat: @"select * from CART where ITEM = '%@'", self.itemName];
+    NSString *query = [NSString stringWithFormat: @"select * from CART where ITEM = '%@' AND NOTE = '%@'", self.itemName, self.noteInput.text];
     // Execute the query.
     [self.dbManager executeQuery:query];
     
@@ -93,10 +92,10 @@
         NSLog(@"Select query was executed successfully. Item %@ already exist", self.itemName);
         NSInteger indexOfQuantity = 1;//[self.dbManager.arrColumnNames indexOfObject:@"quantity"];
         int existQuantity = [[[result objectAtIndex:0] objectAtIndex:indexOfQuantity] intValue];
-        NSInteger indexOfNote = 3;//[self.dbManager.arrColumnNames indexOfObject:@"note"];
-        NSString *existNote = [[result objectAtIndex:0] objectAtIndex:indexOfNote];
+        NSInteger indexOfID = 0;//[self.dbManager.arrColumnNames indexOfObject:@"id"];
+        int existID = [[[result objectAtIndex:0] objectAtIndex:indexOfID] intValue];
         //        self.itemQuantity = [self.quantityInput.text intValue];
-        NSString *updateQuery = [NSString stringWithFormat: @"update CART set QUANTITY = %d , NOTE = '%@%@ ' WHERE ITEM = '%@'", self.itemQuantity + existQuantity, existNote, self.noteInput.text, self.itemName];
+        NSString *updateQuery = [NSString stringWithFormat: @"update CART set QUANTITY = %d , NOTE = '%@ ' WHERE ID = %d", self.itemQuantity + existQuantity, self.noteInput.text, existID];
 
         // Execute the query.
         [self.dbManager executeQuery:updateQuery];
@@ -115,7 +114,8 @@
     else{
         NSLog(@"New Item!");
 //        self.itemQuantity = [self.quantityInput.text intValue];
-        NSString *insertQuery = [NSString stringWithFormat: @"insert into CART values('%@', %d, %f, '%@')", self.itemName,self.itemQuantity , [self.itemPrice floatValue],self.noteInput.text];
+        NSString *insertQuery = [NSString stringWithFormat: @"insert into CART values(NULL,'%@', %d, %f, '%@')", self.itemName,self.itemQuantity , [self.itemPrice floatValue],self.noteInput.text];
+        NSLog(insertQuery);
         // Execute the query.
         [self.dbManager executeQuery:insertQuery];
         

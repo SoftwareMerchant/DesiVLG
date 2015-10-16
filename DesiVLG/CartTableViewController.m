@@ -36,7 +36,7 @@
     self.itemArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     
     for(NSArray *item in self.itemArray){
-        float subtotal = [[item objectAtIndex:1] intValue] * [[item objectAtIndex:2] floatValue];
+        float subtotal = [[item objectAtIndex:2] intValue] * [[item objectAtIndex:3] floatValue];
         self.totalPrice += subtotal;
     }
     
@@ -70,10 +70,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellRecord" forIndexPath:indexPath];
     
-    NSInteger indexOfName = 0;//[self.dbManager.arrColumnNames indexOfObject:@"item"];
-    NSInteger indexOfQuantity = 1;//[self.dbManager.arrColumnNames indexOfObject:@"quantity"];
-    NSInteger indexOfPrice = 2;//[self.dbManager.arrColumnNames indexOfObject:@"price"];
-    NSInteger indexOfNote = 3;//[self.dbManager.arrColumnNames indexOfObject:@"note"];
+    NSInteger indexOfName = 1;//[self.dbManager.arrColumnNames indexOfObject:@"item"];
+    NSInteger indexOfQuantity = 2;//[self.dbManager.arrColumnNames indexOfObject:@"quantity"];
+    NSInteger indexOfPrice = 3;//[self.dbManager.arrColumnNames indexOfObject:@"price"];
+    NSInteger indexOfNote = 4;//[self.dbManager.arrColumnNames indexOfObject:@"note"];
     
     float total = [[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfQuantity] intValue] * [[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfPrice] floatValue];
     // Set the loaded data to the appropriate cell labels.
