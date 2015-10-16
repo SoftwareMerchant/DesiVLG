@@ -1,0 +1,648 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B2112E01BC6F7D600AD78CB /* restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2112DF1BC6F7D600AD78CB /* restaurant.png */; settings = {ASSET_TAGS = (); }; };
+		6B6592B71BCEB24500DFC5F5 /* ScreenLaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592B61BCEB24500DFC5F5 /* ScreenLaunch.png */; settings = {ASSET_TAGS = (); }; };
+		6B6592BC1BCEE99C00DFC5F5 /* transparant.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592BB1BCEE99C00DFC5F5 /* transparant.png */; settings = {ASSET_TAGS = (); }; };
+		6B6592BE1BCEEA4900DFC5F5 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592BD1BCEEA4900DFC5F5 /* orange.png */; settings = {ASSET_TAGS = (); }; };
+		6B6592C21BCEEC7000DFC5F5 /* trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592C11BCEEC7000DFC5F5 /* trans.png */; settings = {ASSET_TAGS = (); }; };
+		6B69B0BD1BC425BA002F6BF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0BC1BC425BA002F6BF6 /* main.m */; };
+		6B69B0C01BC425BA002F6BF6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0BF1BC425BA002F6BF6 /* AppDelegate.m */; };
+		6B69B0C31BC425BA002F6BF6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0C21BC425BA002F6BF6 /* ViewController.m */; };
+		6B69B0C61BC425BA002F6BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B69B0C41BC425BA002F6BF6 /* Main.storyboard */; };
+		6B69B0C81BC425BA002F6BF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B69B0C71BC425BA002F6BF6 /* Assets.xcassets */; };
+		6B69B0CB1BC425BA002F6BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B69B0C91BC425BA002F6BF6 /* LaunchScreen.storyboard */; };
+		6B69B0D61BC425BA002F6BF6 /* DesiVLGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0D51BC425BA002F6BF6 /* DesiVLGTests.m */; };
+		6B69B0E11BC425BA002F6BF6 /* DesiVLGUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0E01BC425BA002F6BF6 /* DesiVLGUITests.m */; };
+		6B69B0F01BC6BDEE002F6BF6 /* MenuIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0EF1BC6BDEE002F6BF6 /* MenuIndexViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B69B0F31BC6BEE6002F6BF6 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0F21BC6BEE6002F6BF6 /* LocationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B69B0F61BC6BF00002F6BF6 /* MyPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0F51BC6BF00002F6BF6 /* MyPin.m */; settings = {ASSET_TAGS = (); }; };
+		6B8DE6D01BCFF1570090BC19 /* TimeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6CF1BCFF1570090BC19 /* TimeSelectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B8DE6D41BCFFA490090BC19 /* OrderOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6D31BCFFA490090BC19 /* OrderOptions.m */; settings = {ASSET_TAGS = (); }; };
+		6B8DE6D71BCFFAEB0090BC19 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6D61BCFFAEB0090BC19 /* Address.m */; settings = {ASSET_TAGS = (); }; };
+		6B8DE6E21BD002050090BC19 /* AddAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8DE6E01BD002050090BC19 /* AddAddressViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6B8DE6E51BD0148F0090BC19 /* AddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6E41BD0148F0090BC19 /* AddAddressViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B929C4C1BD04668009D8D3C /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B929C4B1BD04668009D8D3C /* ItemTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		6B9690BF1BC81C25001216A4 /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9690BC1BC81C25001216A4 /* Checkmark.png */; settings = {ASSET_TAGS = (); }; };
+		6B9690C01BC81C25001216A4 /* Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9690BD1BC81C25001216A4 /* Marker.png */; settings = {ASSET_TAGS = (); }; };
+		6B9690C11BC81C25001216A4 /* Trailer.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9690BE1BC81C25001216A4 /* Trailer.png */; settings = {ASSET_TAGS = (); }; };
+		6B9690C41BC83B39001216A4 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9690C31BC83B39001216A4 /* ItemDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B9690C61BCC1120001216A4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9690C51BCC1120001216A4 /* logo.png */; settings = {ASSET_TAGS = (); }; };
+		6B9690CC1BCC185E001216A4 /* cloth.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9690CB1BCC185E001216A4 /* cloth.png */; settings = {ASSET_TAGS = (); }; };
+		6B9690CE1BCC2D1C001216A4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9690CD1BCC2D1C001216A4 /* libsqlite3.tbd */; };
+		6B9690D31BCC2DBE001216A4 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9690D21BCC2DBE001216A4 /* DBManager.m */; settings = {ASSET_TAGS = (); }; };
+		6BADEB541BD150020047CAF1 /* priceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BADEB531BD150020047CAF1 /* priceTag.png */; settings = {ASSET_TAGS = (); }; };
+		6BB4EF261BCD550D00D28531 /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4EF251BCD550D00D28531 /* CartTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B69B0D21BC425BA002F6BF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B69B0B01BC425BA002F6BF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B69B0B71BC425BA002F6BF6;
+			remoteInfo = DesiVLG;
+		};
+		6B69B0DD1BC425BA002F6BF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B69B0B01BC425BA002F6BF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B69B0B71BC425BA002F6BF6;
+			remoteInfo = DesiVLG;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6B2112DF1BC6F7D600AD78CB /* restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant.png; sourceTree = "<group>"; };
+		6B6592B61BCEB24500DFC5F5 /* ScreenLaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenLaunch.png; sourceTree = "<group>"; };
+		6B6592BB1BCEE99C00DFC5F5 /* transparant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparant.png; sourceTree = "<group>"; };
+		6B6592BD1BCEEA4900DFC5F5 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
+		6B6592C11BCEEC7000DFC5F5 /* trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trans.png; sourceTree = "<group>"; };
+		6B69B0B81BC425BA002F6BF6 /* DesiVLG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesiVLG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B69B0BC1BC425BA002F6BF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B69B0BE1BC425BA002F6BF6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6B69B0BF1BC425BA002F6BF6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6B69B0C11BC425BA002F6BF6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6B69B0C21BC425BA002F6BF6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6B69B0C51BC425BA002F6BF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B69B0C71BC425BA002F6BF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B69B0CA1BC425BA002F6BF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6B69B0CC1BC425BA002F6BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B69B0D11BC425BA002F6BF6 /* DesiVLGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesiVLGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B69B0D51BC425BA002F6BF6 /* DesiVLGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesiVLGTests.m; sourceTree = "<group>"; };
+		6B69B0D71BC425BA002F6BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B69B0DC1BC425BA002F6BF6 /* DesiVLGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesiVLGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B69B0E01BC425BA002F6BF6 /* DesiVLGUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesiVLGUITests.m; sourceTree = "<group>"; };
+		6B69B0E21BC425BA002F6BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B69B0EE1BC6BDEE002F6BF6 /* MenuIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuIndexViewController.h; sourceTree = "<group>"; };
+		6B69B0EF1BC6BDEE002F6BF6 /* MenuIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuIndexViewController.m; sourceTree = "<group>"; };
+		6B69B0F11BC6BEE6002F6BF6 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		6B69B0F21BC6BEE6002F6BF6 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		6B69B0F41BC6BF00002F6BF6 /* MyPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPin.h; sourceTree = "<group>"; };
+		6B69B0F51BC6BF00002F6BF6 /* MyPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPin.m; sourceTree = "<group>"; };
+		6B8DE6CE1BCFF1570090BC19 /* TimeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSelectionViewController.h; sourceTree = "<group>"; };
+		6B8DE6CF1BCFF1570090BC19 /* TimeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSelectionViewController.m; sourceTree = "<group>"; };
+		6B8DE6D21BCFFA490090BC19 /* OrderOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderOptions.h; sourceTree = "<group>"; };
+		6B8DE6D31BCFFA490090BC19 /* OrderOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderOptions.m; sourceTree = "<group>"; };
+		6B8DE6D51BCFFAEB0090BC19 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		6B8DE6D61BCFFAEB0090BC19 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		6B8DE6E01BD002050090BC19 /* AddAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAddressViewController.xib; sourceTree = "<group>"; };
+		6B8DE6E31BD0148F0090BC19 /* AddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAddressViewController.h; sourceTree = "<group>"; };
+		6B8DE6E41BD0148F0090BC19 /* AddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAddressViewController.m; sourceTree = "<group>"; };
+		6B929C4A1BD04668009D8D3C /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
+		6B929C4B1BD04668009D8D3C /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
+		6B9690BC1BC81C25001216A4 /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
+		6B9690BD1BC81C25001216A4 /* Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Marker.png; sourceTree = "<group>"; };
+		6B9690BE1BC81C25001216A4 /* Trailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trailer.png; sourceTree = "<group>"; };
+		6B9690C21BC83B39001216A4 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
+		6B9690C31BC83B39001216A4 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		6B9690C51BCC1120001216A4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		6B9690CB1BCC185E001216A4 /* cloth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloth.png; sourceTree = "<group>"; };
+		6B9690CD1BCC2D1C001216A4 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6B9690D11BCC2DBE001216A4 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		6B9690D21BCC2DBE001216A4 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		6BADEB531BD150020047CAF1 /* priceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceTag.png; sourceTree = "<group>"; };
+		6BB4EF241BCD550D00D28531 /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartTableViewController.h; path = ../CartTableViewController.h; sourceTree = "<group>"; };
+		6BB4EF251BCD550D00D28531 /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartTableViewController.m; path = ../CartTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B69B0B51BC425BA002F6BF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B9690CE1BCC2D1C001216A4 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B69B0CE1BC425BA002F6BF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B69B0D91BC425BA002F6BF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B69B0AF1BC425BA002F6BF6 = {
+			isa = PBXGroup;
+			children = (
+				6B9690CD1BCC2D1C001216A4 /* libsqlite3.tbd */,
+				6B69B0BA1BC425BA002F6BF6 /* DesiVLG */,
+				6B69B0D41BC425BA002F6BF6 /* DesiVLGTests */,
+				6B69B0DF1BC425BA002F6BF6 /* DesiVLGUITests */,
+				6B69B0B91BC425BA002F6BF6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B69B0B91BC425BA002F6BF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B69B0B81BC425BA002F6BF6 /* DesiVLG.app */,
+				6B69B0D11BC425BA002F6BF6 /* DesiVLGTests.xctest */,
+				6B69B0DC1BC425BA002F6BF6 /* DesiVLGUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B69B0BA1BC425BA002F6BF6 /* DesiVLG */ = {
+			isa = PBXGroup;
+			children = (
+				6B69B0C41BC425BA002F6BF6 /* Main.storyboard */,
+				6B8DE6D11BCFFA1D0090BC19 /* Model */,
+				6B69B0BE1BC425BA002F6BF6 /* AppDelegate.h */,
+				6B69B0BF1BC425BA002F6BF6 /* AppDelegate.m */,
+				6B69B0C11BC425BA002F6BF6 /* ViewController.h */,
+				6B69B0C21BC425BA002F6BF6 /* ViewController.m */,
+				6B8DE6E01BD002050090BC19 /* AddAddressViewController.xib */,
+				6B8DE6E31BD0148F0090BC19 /* AddAddressViewController.h */,
+				6B8DE6E41BD0148F0090BC19 /* AddAddressViewController.m */,
+				6B8DE6CE1BCFF1570090BC19 /* TimeSelectionViewController.h */,
+				6B8DE6CF1BCFF1570090BC19 /* TimeSelectionViewController.m */,
+				6B69B0EE1BC6BDEE002F6BF6 /* MenuIndexViewController.h */,
+				6B69B0EF1BC6BDEE002F6BF6 /* MenuIndexViewController.m */,
+				6B929C4A1BD04668009D8D3C /* ItemTableViewCell.h */,
+				6B929C4B1BD04668009D8D3C /* ItemTableViewCell.m */,
+				6B9690C21BC83B39001216A4 /* ItemDetailViewController.h */,
+				6B9690C31BC83B39001216A4 /* ItemDetailViewController.m */,
+				6BB4EF241BCD550D00D28531 /* CartTableViewController.h */,
+				6BB4EF251BCD550D00D28531 /* CartTableViewController.m */,
+				6B69B0F11BC6BEE6002F6BF6 /* LocationViewController.h */,
+				6B69B0F21BC6BEE6002F6BF6 /* LocationViewController.m */,
+				6B69B0F41BC6BF00002F6BF6 /* MyPin.h */,
+				6B69B0F51BC6BF00002F6BF6 /* MyPin.m */,
+				6B69B0C71BC425BA002F6BF6 /* Assets.xcassets */,
+				6B69B0C91BC425BA002F6BF6 /* LaunchScreen.storyboard */,
+				6B69B0CC1BC425BA002F6BF6 /* Info.plist */,
+				6B69B0BB1BC425BA002F6BF6 /* Supporting Files */,
+				6B9690D11BCC2DBE001216A4 /* DBManager.h */,
+				6B9690D21BCC2DBE001216A4 /* DBManager.m */,
+			);
+			path = DesiVLG;
+			sourceTree = "<group>";
+		};
+		6B69B0BB1BC425BA002F6BF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BADEB531BD150020047CAF1 /* priceTag.png */,
+				6B6592C11BCEEC7000DFC5F5 /* trans.png */,
+				6B6592BD1BCEEA4900DFC5F5 /* orange.png */,
+				6B6592BB1BCEE99C00DFC5F5 /* transparant.png */,
+				6B6592B61BCEB24500DFC5F5 /* ScreenLaunch.png */,
+				6B9690CB1BCC185E001216A4 /* cloth.png */,
+				6B9690C51BCC1120001216A4 /* logo.png */,
+				6B9690BC1BC81C25001216A4 /* Checkmark.png */,
+				6B9690BD1BC81C25001216A4 /* Marker.png */,
+				6B9690BE1BC81C25001216A4 /* Trailer.png */,
+				6B2112DF1BC6F7D600AD78CB /* restaurant.png */,
+				6B69B0BC1BC425BA002F6BF6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B69B0D41BC425BA002F6BF6 /* DesiVLGTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B69B0D51BC425BA002F6BF6 /* DesiVLGTests.m */,
+				6B69B0D71BC425BA002F6BF6 /* Info.plist */,
+			);
+			path = DesiVLGTests;
+			sourceTree = "<group>";
+		};
+		6B69B0DF1BC425BA002F6BF6 /* DesiVLGUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6B69B0E01BC425BA002F6BF6 /* DesiVLGUITests.m */,
+				6B69B0E21BC425BA002F6BF6 /* Info.plist */,
+			);
+			path = DesiVLGUITests;
+			sourceTree = "<group>";
+		};
+		6B8DE6D11BCFFA1D0090BC19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B8DE6D21BCFFA490090BC19 /* OrderOptions.h */,
+				6B8DE6D31BCFFA490090BC19 /* OrderOptions.m */,
+				6B8DE6D51BCFFAEB0090BC19 /* Address.h */,
+				6B8DE6D61BCFFAEB0090BC19 /* Address.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B69B0B71BC425BA002F6BF6 /* DesiVLG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B69B0E51BC425BA002F6BF6 /* Build configuration list for PBXNativeTarget "DesiVLG" */;
+			buildPhases = (
+				6B69B0B41BC425BA002F6BF6 /* Sources */,
+				6B69B0B51BC425BA002F6BF6 /* Frameworks */,
+				6B69B0B61BC425BA002F6BF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesiVLG;
+			productName = DesiVLG;
+			productReference = 6B69B0B81BC425BA002F6BF6 /* DesiVLG.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6B69B0D01BC425BA002F6BF6 /* DesiVLGTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B69B0E81BC425BA002F6BF6 /* Build configuration list for PBXNativeTarget "DesiVLGTests" */;
+			buildPhases = (
+				6B69B0CD1BC425BA002F6BF6 /* Sources */,
+				6B69B0CE1BC425BA002F6BF6 /* Frameworks */,
+				6B69B0CF1BC425BA002F6BF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B69B0D31BC425BA002F6BF6 /* PBXTargetDependency */,
+			);
+			name = DesiVLGTests;
+			productName = DesiVLGTests;
+			productReference = 6B69B0D11BC425BA002F6BF6 /* DesiVLGTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6B69B0DB1BC425BA002F6BF6 /* DesiVLGUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B69B0EB1BC425BA002F6BF6 /* Build configuration list for PBXNativeTarget "DesiVLGUITests" */;
+			buildPhases = (
+				6B69B0D81BC425BA002F6BF6 /* Sources */,
+				6B69B0D91BC425BA002F6BF6 /* Frameworks */,
+				6B69B0DA1BC425BA002F6BF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B69B0DE1BC425BA002F6BF6 /* PBXTargetDependency */,
+			);
+			name = DesiVLGUITests;
+			productName = DesiVLGUITests;
+			productReference = 6B69B0DC1BC425BA002F6BF6 /* DesiVLGUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B69B0B01BC425BA002F6BF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Yike Xue";
+				TargetAttributes = {
+					6B69B0B71BC425BA002F6BF6 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					6B69B0D01BC425BA002F6BF6 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 6B69B0B71BC425BA002F6BF6;
+					};
+					6B69B0DB1BC425BA002F6BF6 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 6B69B0B71BC425BA002F6BF6;
+					};
+				};
+			};
+			buildConfigurationList = 6B69B0B31BC425BA002F6BF6 /* Build configuration list for PBXProject "DesiVLG" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B69B0AF1BC425BA002F6BF6;
+			productRefGroup = 6B69B0B91BC425BA002F6BF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B69B0B71BC425BA002F6BF6 /* DesiVLG */,
+				6B69B0D01BC425BA002F6BF6 /* DesiVLGTests */,
+				6B69B0DB1BC425BA002F6BF6 /* DesiVLGUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B69B0B61BC425BA002F6BF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B69B0CB1BC425BA002F6BF6 /* LaunchScreen.storyboard in Resources */,
+				6B2112E01BC6F7D600AD78CB /* restaurant.png in Resources */,
+				6B6592B71BCEB24500DFC5F5 /* ScreenLaunch.png in Resources */,
+				6B9690CC1BCC185E001216A4 /* cloth.png in Resources */,
+				6B8DE6E21BD002050090BC19 /* AddAddressViewController.xib in Resources */,
+				6B9690C61BCC1120001216A4 /* logo.png in Resources */,
+				6B6592BE1BCEEA4900DFC5F5 /* orange.png in Resources */,
+				6BADEB541BD150020047CAF1 /* priceTag.png in Resources */,
+				6B69B0C81BC425BA002F6BF6 /* Assets.xcassets in Resources */,
+				6B69B0C61BC425BA002F6BF6 /* Main.storyboard in Resources */,
+				6B6592C21BCEEC7000DFC5F5 /* trans.png in Resources */,
+				6B9690BF1BC81C25001216A4 /* Checkmark.png in Resources */,
+				6B9690C11BC81C25001216A4 /* Trailer.png in Resources */,
+				6B6592BC1BCEE99C00DFC5F5 /* transparant.png in Resources */,
+				6B9690C01BC81C25001216A4 /* Marker.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B69B0CF1BC425BA002F6BF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B69B0DA1BC425BA002F6BF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B69B0B41BC425BA002F6BF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B69B0F01BC6BDEE002F6BF6 /* MenuIndexViewController.m in Sources */,
+				6B8DE6D41BCFFA490090BC19 /* OrderOptions.m in Sources */,
+				6B69B0C31BC425BA002F6BF6 /* ViewController.m in Sources */,
+				6B8DE6E51BD0148F0090BC19 /* AddAddressViewController.m in Sources */,
+				6BB4EF261BCD550D00D28531 /* CartTableViewController.m in Sources */,
+				6B9690C41BC83B39001216A4 /* ItemDetailViewController.m in Sources */,
+				6B69B0C01BC425BA002F6BF6 /* AppDelegate.m in Sources */,
+				6B8DE6D71BCFFAEB0090BC19 /* Address.m in Sources */,
+				6B69B0F61BC6BF00002F6BF6 /* MyPin.m in Sources */,
+				6B69B0BD1BC425BA002F6BF6 /* main.m in Sources */,
+				6B69B0F31BC6BEE6002F6BF6 /* LocationViewController.m in Sources */,
+				6B8DE6D01BCFF1570090BC19 /* TimeSelectionViewController.m in Sources */,
+				6B929C4C1BD04668009D8D3C /* ItemTableViewCell.m in Sources */,
+				6B9690D31BCC2DBE001216A4 /* DBManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B69B0CD1BC425BA002F6BF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B69B0D61BC425BA002F6BF6 /* DesiVLGTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B69B0D81BC425BA002F6BF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B69B0E11BC425BA002F6BF6 /* DesiVLGUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B69B0D31BC425BA002F6BF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B69B0B71BC425BA002F6BF6 /* DesiVLG */;
+			targetProxy = 6B69B0D21BC425BA002F6BF6 /* PBXContainerItemProxy */;
+		};
+		6B69B0DE1BC425BA002F6BF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B69B0B71BC425BA002F6BF6 /* DesiVLG */;
+			targetProxy = 6B69B0DD1BC425BA002F6BF6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6B69B0C41BC425BA002F6BF6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B69B0C51BC425BA002F6BF6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6B69B0C91BC425BA002F6BF6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B69B0CA1BC425BA002F6BF6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B69B0E31BC425BA002F6BF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6B69B0E41BC425BA002F6BF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B69B0E61BC425BA002F6BF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesiVLG/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLG;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6B69B0E71BC425BA002F6BF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DesiVLG/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLG;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6B69B0E91BC425BA002F6BF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DesiVLGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesiVLG.app/DesiVLG";
+			};
+			name = Debug;
+		};
+		6B69B0EA1BC425BA002F6BF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DesiVLGTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLGTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesiVLG.app/DesiVLG";
+			};
+			name = Release;
+		};
+		6B69B0EC1BC425BA002F6BF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DesiVLGUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLGUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DesiVLG;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		6B69B0ED1BC425BA002F6BF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DesiVLGUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLGUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DesiVLG;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B69B0B31BC425BA002F6BF6 /* Build configuration list for PBXProject "DesiVLG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B69B0E31BC425BA002F6BF6 /* Debug */,
+				6B69B0E41BC425BA002F6BF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B69B0E51BC425BA002F6BF6 /* Build configuration list for PBXNativeTarget "DesiVLG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B69B0E61BC425BA002F6BF6 /* Debug */,
+				6B69B0E71BC425BA002F6BF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B69B0E81BC425BA002F6BF6 /* Build configuration list for PBXNativeTarget "DesiVLGTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B69B0E91BC425BA002F6BF6 /* Debug */,
+				6B69B0EA1BC425BA002F6BF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B69B0EB1BC425BA002F6BF6 /* Build configuration list for PBXNativeTarget "DesiVLGUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B69B0EC1BC425BA002F6BF6 /* Debug */,
+				6B69B0ED1BC425BA002F6BF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B69B0B01BC425BA002F6BF6 /* Project object */;
+}
