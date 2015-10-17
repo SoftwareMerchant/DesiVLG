@@ -1,28 +1,37 @@
 //
-//  CartTableViewController.m
+//  CartViewController.m
 //  DesiVLG
 //
-//  Created by Yike Xue on 10/13/15.
+//  Created by Yike Xue on 10/16/15.
 //  Copyright © 2015 Yike Xue. All rights reserved.
 //
 
-#import "CartTableViewController.h"
+#import "CartViewController.h"
+#import "OrderTableViewCell.h"
 
-@interface CartTableViewController ()
+@interface CartViewController () <UITableViewDelegate, UITableViewDataSource >
 @property (nonatomic) float totalPrice;
+@property (nonatomic) float taxRate;//PA
 @end
 
-@implementation CartTableViewController
+@implementation CartViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Food Cart";
+    // Do any additional setup after loading the view.
+    self.title = @"Your Order";
     self.totalPrice = 0;
+    self.taxRate = 0.06;
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
     NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART "
     "(ITEM TEXT PRIMARY KEY, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
     [self.dbManager executeQuery:createSQL];
     [self loadData];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 -(void)loadData{
@@ -40,13 +49,12 @@
         self.totalPrice += subtotal;
     }
     
-    // Reload the table view.
-    [self.tableView reloadData];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.myTableView reloadData];
+    self.subtotalLabel.text = [NSString stringWithFormat:@"$ %.2f",self.totalPrice];
+    self.taxLabel.text = [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate];
+    self.totalLabel.text =
+    [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate + self.totalPrice];
+    
 }
 
 #pragma mark - Table view data source
@@ -68,7 +76,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCellRecord" forIndexPath:indexPath];
+    OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"itemInOrderCell" forIndexPath:indexPath];
     
     NSInteger indexOfName = 1;//[self.dbManager.arrColumnNames indexOfObject:@"item"];
     NSInteger indexOfQuantity = 2;//[self.dbManager.arrColumnNames indexOfObject:@"quantity"];
@@ -77,47 +85,15 @@
     
     float total = [[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfQuantity] intValue] * [[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfPrice] floatValue];
     // Set the loaded data to the appropriate cell labels.
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ \n($%@ x %@) Total: $%.2f", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfName],  [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfPrice], [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfQuantity],total];
-    
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Note: %@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfNote]];
+
+    cell.quantityLabel.text = [NSString stringWithFormat:@"%@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfQuantity]];
+    cell.itemNameLabel.text = [NSString stringWithFormat:@"%@($%.2f)", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfName],[[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfPrice] floatValue]];
+    cell.itemNoteField.text = [NSString stringWithFormat:@"Note: %@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfNote]];
+    cell.itemPriceLabel.text = [NSString stringWithFormat:@"$ %.2f", total];
     
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

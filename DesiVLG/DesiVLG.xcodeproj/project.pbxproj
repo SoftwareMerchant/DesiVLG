@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6B2112E01BC6F7D600AD78CB /* restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2112DF1BC6F7D600AD78CB /* restaurant.png */; settings = {ASSET_TAGS = (); }; };
+		6B2BAC2B1BD17EA100AB4C9F /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2BAC2A1BD17EA100AB4C9F /* CartViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B2BAC2E1BD182CF00AB4C9F /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		6B6592B71BCEB24500DFC5F5 /* ScreenLaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592B61BCEB24500DFC5F5 /* ScreenLaunch.png */; settings = {ASSET_TAGS = (); }; };
 		6B6592BC1BCEE99C00DFC5F5 /* transparant.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592BB1BCEE99C00DFC5F5 /* transparant.png */; settings = {ASSET_TAGS = (); }; };
 		6B6592BE1BCEEA4900DFC5F5 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592BD1BCEEA4900DFC5F5 /* orange.png */; settings = {ASSET_TAGS = (); }; };
@@ -38,7 +40,6 @@
 		6B9690CE1BCC2D1C001216A4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9690CD1BCC2D1C001216A4 /* libsqlite3.tbd */; };
 		6B9690D31BCC2DBE001216A4 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9690D21BCC2DBE001216A4 /* DBManager.m */; settings = {ASSET_TAGS = (); }; };
 		6BADEB541BD150020047CAF1 /* priceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BADEB531BD150020047CAF1 /* priceTag.png */; settings = {ASSET_TAGS = (); }; };
-		6BB4EF261BCD550D00D28531 /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4EF251BCD550D00D28531 /* CartTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,10 @@
 
 /* Begin PBXFileReference section */
 		6B2112DF1BC6F7D600AD78CB /* restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant.png; sourceTree = "<group>"; };
+		6B2BAC291BD17EA100AB4C9F /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		6B2BAC2A1BD17EA100AB4C9F /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		6B2BAC2C1BD182CF00AB4C9F /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableViewCell.h; sourceTree = "<group>"; };
+		6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableViewCell.m; sourceTree = "<group>"; };
 		6B6592B61BCEB24500DFC5F5 /* ScreenLaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenLaunch.png; sourceTree = "<group>"; };
 		6B6592BB1BCEE99C00DFC5F5 /* transparant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparant.png; sourceTree = "<group>"; };
 		6B6592BD1BCEEA4900DFC5F5 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
@@ -108,8 +113,6 @@
 		6B9690D11BCC2DBE001216A4 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		6B9690D21BCC2DBE001216A4 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		6BADEB531BD150020047CAF1 /* priceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceTag.png; sourceTree = "<group>"; };
-		6BB4EF241BCD550D00D28531 /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartTableViewController.h; path = ../CartTableViewController.h; sourceTree = "<group>"; };
-		6BB4EF251BCD550D00D28531 /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartTableViewController.m; path = ../CartTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,9 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				6B69B0C41BC425BA002F6BF6 /* Main.storyboard */,
-				6B8DE6D11BCFFA1D0090BC19 /* Model */,
 				6B69B0BE1BC425BA002F6BF6 /* AppDelegate.h */,
 				6B69B0BF1BC425BA002F6BF6 /* AppDelegate.m */,
+				6B8DE6D11BCFFA1D0090BC19 /* Model */,
 				6B69B0C11BC425BA002F6BF6 /* ViewController.h */,
 				6B69B0C21BC425BA002F6BF6 /* ViewController.m */,
 				6B8DE6E01BD002050090BC19 /* AddAddressViewController.xib */,
@@ -179,8 +182,10 @@
 				6B929C4B1BD04668009D8D3C /* ItemTableViewCell.m */,
 				6B9690C21BC83B39001216A4 /* ItemDetailViewController.h */,
 				6B9690C31BC83B39001216A4 /* ItemDetailViewController.m */,
-				6BB4EF241BCD550D00D28531 /* CartTableViewController.h */,
-				6BB4EF251BCD550D00D28531 /* CartTableViewController.m */,
+				6B2BAC291BD17EA100AB4C9F /* CartViewController.h */,
+				6B2BAC2A1BD17EA100AB4C9F /* CartViewController.m */,
+				6B2BAC2C1BD182CF00AB4C9F /* OrderTableViewCell.h */,
+				6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */,
 				6B69B0F11BC6BEE6002F6BF6 /* LocationViewController.h */,
 				6B69B0F21BC6BEE6002F6BF6 /* LocationViewController.m */,
 				6B69B0F41BC6BF00002F6BF6 /* MyPin.h */,
@@ -386,10 +391,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B69B0F01BC6BDEE002F6BF6 /* MenuIndexViewController.m in Sources */,
+				6B2BAC2B1BD17EA100AB4C9F /* CartViewController.m in Sources */,
 				6B8DE6D41BCFFA490090BC19 /* OrderOptions.m in Sources */,
 				6B69B0C31BC425BA002F6BF6 /* ViewController.m in Sources */,
 				6B8DE6E51BD0148F0090BC19 /* AddAddressViewController.m in Sources */,
-				6BB4EF261BCD550D00D28531 /* CartTableViewController.m in Sources */,
 				6B9690C41BC83B39001216A4 /* ItemDetailViewController.m in Sources */,
 				6B69B0C01BC425BA002F6BF6 /* AppDelegate.m in Sources */,
 				6B8DE6D71BCFFAEB0090BC19 /* Address.m in Sources */,
@@ -398,6 +403,7 @@
 				6B69B0F31BC6BEE6002F6BF6 /* LocationViewController.m in Sources */,
 				6B8DE6D01BCFF1570090BC19 /* TimeSelectionViewController.m in Sources */,
 				6B929C4C1BD04668009D8D3C /* ItemTableViewCell.m in Sources */,
+				6B2BAC2E1BD182CF00AB4C9F /* OrderTableViewCell.m in Sources */,
 				6B9690D31BCC2DBE001216A4 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
