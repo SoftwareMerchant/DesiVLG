@@ -21,4 +21,6 @@
 
 @property (nonatomic, strong) NSArray *itemArray;
 
+- (void)clearCart;
+- (void)clearConfirm;
 @end

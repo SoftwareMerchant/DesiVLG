@@ -19,9 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *q2Btn;
 @property (weak, nonatomic) IBOutlet UIButton *q4Btn;
 @property (weak, nonatomic) IBOutlet UIButton *q3Btn;
+@property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 
 //@property (weak, nonatomic) IBOutlet UITextField *quantityInput;
-@property (weak, nonatomic) IBOutlet UITextField *noteInput;
+
 
 - (IBAction)addInCartTap:(id)sender;
 @end

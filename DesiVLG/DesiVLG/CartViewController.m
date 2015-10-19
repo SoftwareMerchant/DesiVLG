@@ -9,7 +9,7 @@
 #import "CartViewController.h"
 #import "OrderTableViewCell.h"
 
-@interface CartViewController () <UITableViewDelegate, UITableViewDataSource >
+@interface CartViewController () <UITableViewDelegate, UITableViewDataSource, CellUpdateDelegate>
 @property (nonatomic) float totalPrice;
 @property (nonatomic) float taxRate;//PA
 @end
@@ -20,13 +20,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Your Order";
-    self.totalPrice = 0;
-    self.taxRate = 0.06;
+    self.taxRate = 0.06;//PA tax
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
-    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART "
-    "(ITEM TEXT PRIMARY KEY, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
+    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
     [self.dbManager executeQuery:createSQL];
     [self loadData];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clearCart)];
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +43,7 @@
         self.itemArray = nil;
     }
     self.itemArray = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
-    
+    self.totalPrice = 0;
     for(NSArray *item in self.itemArray){
         float subtotal = [[item objectAtIndex:2] intValue] * [[item objectAtIndex:3] floatValue];
         self.totalPrice += subtotal;
@@ -55,6 +55,41 @@
     self.totalLabel.text =
     [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate + self.totalPrice];
     
+}
+
+-(void)clearCart{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning"
+                                                                             message:@"It is going to clear the cart, are you sure?"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    //We add buttons to the alert controller by creating UIAlertActions:
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:nil];
+    [alertController addAction:actionCancel];
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Sure"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action)
+                               {
+                                   [self clearConfirm];
+                                   
+                               }];
+    
+    [alertController addAction:actionOk];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void)clearConfirm{
+    NSString *removeSQL = @"drop table if exists cart";
+    [self.dbManager executeQuery:removeSQL];
+    [self loadData];
+}
+
+- (void)updateCart{
+    [self loadData];
+    self.subtotalLabel.text = [NSString stringWithFormat:@"$ %.2f",self.totalPrice];
+    self.taxLabel.text = [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate];
+    self.totalLabel.text =
+    [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate + self.totalPrice];
 }
 
 #pragma mark - Table view data source
@@ -69,10 +104,10 @@
     }
     return [self.itemArray count];
 }
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"My Cart total:  $%.2f",self.totalPrice];
-}
+//
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    return [NSString stringWithFormat:@"My Cart total:  $%.2f",self.totalPrice];
+//}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,10 +121,15 @@
     float total = [[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfQuantity] intValue] * [[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfPrice] floatValue];
     // Set the loaded data to the appropriate cell labels.
 
+    cell.unitPrice = [[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfPrice] floatValue];
+    cell.name = [NSString stringWithFormat:@"%@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfName]];
+    cell.note = [NSString stringWithFormat:@"%@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfNote]];
     cell.quantityLabel.text = [NSString stringWithFormat:@"%@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfQuantity]];
-    cell.itemNameLabel.text = [NSString stringWithFormat:@"%@($%.2f)", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfName],[[[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfPrice] floatValue]];
-    cell.itemNoteField.text = [NSString stringWithFormat:@"Note: %@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfNote]];
+    cell.itemNameLabel.text = [NSString stringWithFormat:@"%@($%.2f)", cell.name,cell.unitPrice];
+    cell.itemNoteField.text = [NSString stringWithFormat:@"Note: %@", cell.note];
+    [cell.itemNoteField setContentOffset:CGPointZero animated:YES];
     cell.itemPriceLabel.text = [NSString stringWithFormat:@"$ %.2f", total];
+    cell.delegate = self;
     
     return cell;
 }

@@ -10,7 +10,7 @@
 #import <sqlite3.h>
 #import "DBManager.h"
 
-@interface ItemDetailViewController ()
+@interface ItemDetailViewController ()<UITextViewDelegate>
 
 @property (nonatomic, strong) DBManager *dbManager;
 
@@ -32,6 +32,9 @@
     UIGraphicsEndImageContext();
     self.priceLabel.backgroundColor = [UIColor colorWithPatternImage:newImage];
     self.priceLabel.text = [NSString stringWithFormat:@" %.2f",[self.itemPrice floatValue]];
+    self.noteTextView.delegate = self;
+    self.noteTextView.text = @"e.g. Less spicy. (Add food items via options above.)";
+    self.noteTextView.textColor = [UIColor lightGrayColor];
     
     self.itemQuantity = 1;
     self.q1Btn.layer.masksToBounds = YES;
@@ -59,7 +62,7 @@
 
 -(void)processTap{
 //  [self.quantityInput resignFirstResponder];
-    [self.noteInput resignFirstResponder];
+    [self.noteTextView resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +74,25 @@
 - (IBAction)didEndOnExit:(id)sender {
     [self resignFirstResponder];
 }
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"e.g. Less spicy. (Add food items via options above.)"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"e.g. Less spicy. (Add food items via options above.)";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -81,8 +103,16 @@
 }
 */
 
+- (NSString*)getNote{
+    if ([self.noteTextView.text isEqualToString:@"e.g. Less spicy. (Add food items via options above.)"]){
+        return @"";
+    }else{
+        return self.noteTextView.text;
+    }
+}
+
 - (IBAction)addInCartTap:(id)sender {
-    NSString *query = [NSString stringWithFormat: @"select * from CART where ITEM = '%@' AND NOTE = '%@'", self.itemName, self.noteInput.text];
+    NSString *query = [NSString stringWithFormat: @"select * from CART where ITEM = '%@' AND NOTE = '%@'", self.itemName, [self getNote]];
     // Execute the query.
     [self.dbManager executeQuery:query];
     
@@ -90,12 +120,12 @@
     
     if (result != nil && [result count] > 0) {
         NSLog(@"Select query was executed successfully. Item %@ already exist", self.itemName);
-        NSInteger indexOfQuantity = 1;//[self.dbManager.arrColumnNames indexOfObject:@"quantity"];
+        NSInteger indexOfQuantity = 2;//[self.dbManager.arrColumnNames indexOfObject:@"quantity"];
         int existQuantity = [[[result objectAtIndex:0] objectAtIndex:indexOfQuantity] intValue];
         NSInteger indexOfID = 0;//[self.dbManager.arrColumnNames indexOfObject:@"id"];
         int existID = [[[result objectAtIndex:0] objectAtIndex:indexOfID] intValue];
         //        self.itemQuantity = [self.quantityInput.text intValue];
-        NSString *updateQuery = [NSString stringWithFormat: @"update CART set QUANTITY = %d , NOTE = '%@ ' WHERE ID = %d", self.itemQuantity + existQuantity, self.noteInput.text, existID];
+        NSString *updateQuery = [NSString stringWithFormat: @"update CART set QUANTITY = %d WHERE ID = %d", self.itemQuantity + existQuantity,  existID];
 
         // Execute the query.
         [self.dbManager executeQuery:updateQuery];
@@ -114,7 +144,7 @@
     else{
         NSLog(@"New Item!");
 //        self.itemQuantity = [self.quantityInput.text intValue];
-        NSString *insertQuery = [NSString stringWithFormat: @"insert into CART values(NULL,'%@', %d, %f, '%@')", self.itemName,self.itemQuantity , [self.itemPrice floatValue],self.noteInput.text];
+        NSString *insertQuery = [NSString stringWithFormat: @"insert into CART values(NULL,'%@', %d, %f, '%@')", self.itemName,self.itemQuantity , [self.itemPrice floatValue],[self getNote]];
         NSLog(insertQuery);
         // Execute the query.
         [self.dbManager executeQuery:insertQuery];
