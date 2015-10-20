@@ -595,6 +595,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addInCartTap:" destination="8Ji-MM-Opf" eventType="touchUpInside" id="OtU-tK-0Yg"/>
+                                    <segue destination="p4H-zx-ka4" kind="show" identifier="checkOut" id="CiU-3l-XJt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$ 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wD-6l-xYc">
@@ -605,7 +606,7 @@
                                     <constraint firstAttribute="height" constant="90" id="Rcd-Yr-v01"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-BoldItalic" family="Menlo" pointSize="21"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.80760546639999997" green="0.47142278640000002" blue="0.27171880609999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzU-Mq-VsE">
@@ -659,6 +660,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1b-ax-3v4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1183" y="-1389"/>
+        </scene>
+        <!--Apple Pay View Controller-->
+        <scene sceneID="mm8-cP-DKy">
+            <objects>
+                <viewController id="p4H-zx-ka4" customClass="ApplePayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="neo-Vv-h5n"/>
+                        <viewControllerLayoutGuide type="bottom" id="LEg-zy-p4u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E4q-ap-eL2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
+                                <rect key="frame" x="123" y="109" width="354" height="165"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.27058823529999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="SGa-YS-6Vs"/>
+                                    <constraint firstAttribute="width" constant="354" id="WmH-ZH-flN"/>
+                                </constraints>
+                                <state key="normal" image="applePay.png"/>
+                                <connections>
+                                    <action selector="checkOut:" destination="p4H-zx-ka4" eventType="touchUpInside" id="rQ7-BR-RhY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="centerX" secondItem="E4q-ap-eL2" secondAttribute="centerX" id="g5h-Ja-SgO"/>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="top" secondItem="neo-Vv-h5n" secondAttribute="bottom" constant="45" id="ntv-Ug-0lA"/>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="centerY" secondItem="E4q-ap-eL2" secondAttribute="centerY" id="uVR-bR-fEX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uVR-bR-fEX"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRD-Xk-2XO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="-1389"/>
         </scene>
         <!--Order Options-->
         <scene sceneID="fV7-iv-a2B">
@@ -856,7 +901,6 @@ Sunday:	12:00 PM - 03:30 PM
                             </textView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.027450980392156862" green="0.090196078431372548" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="tmR-67-UNp" firstAttribute="top" secondItem="spQ-lS-nZk" secondAttribute="bottom" id="IeY-q6-s6Q"/>
                             <constraint firstItem="zhG-eu-6Nc" firstAttribute="leading" secondItem="SoI-Nq-lRq" secondAttribute="leading" id="JQ8-dy-pIY"/>
@@ -871,7 +915,7 @@ Sunday:	12:00 PM - 03:30 PM
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddf-rY-ygj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="34"/>
+            <point key="canvasLocation" x="427" y="-38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oZJ-PH-hLo">
@@ -896,6 +940,7 @@ Sunday:	12:00 PM - 03:30 PM
     <resources>
         <image name="Checkmark.png" width="30" height="30"/>
         <image name="ScreenLaunch.png" width="500" height="903"/>
+        <image name="applePay.png" width="166" height="114"/>
         <image name="orange.png" width="897" height="166"/>
         <image name="restaurant.png" width="250" height="248"/>
         <image name="trans.png" width="895" height="164"/>

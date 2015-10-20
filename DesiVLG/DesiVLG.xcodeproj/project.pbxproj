@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B1C7B291BD6CE3000B8AF22 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7B281BD6CE3000B8AF22 /* PaymentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B1C7B2C1BD6CFEB00B8AF22 /* ApplePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7B2B1BD6CFEB00B8AF22 /* ApplePayViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6B1C7B2E1BD6D00B00B8AF22 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C7B2D1BD6D00B00B8AF22 /* PassKit.framework */; };
+		6B1C7B301BD6D12900B8AF22 /* applePay.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B1C7B2F1BD6D12900B8AF22 /* applePay.png */; settings = {ASSET_TAGS = (); }; };
 		6B2112E01BC6F7D600AD78CB /* restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B2112DF1BC6F7D600AD78CB /* restaurant.png */; settings = {ASSET_TAGS = (); }; };
 		6B2BAC2B1BD17EA100AB4C9F /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2BAC2A1BD17EA100AB4C9F /* CartViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6B2BAC2E1BD182CF00AB4C9F /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -23,7 +27,6 @@
 		6B69B0D61BC425BA002F6BF6 /* DesiVLGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0D51BC425BA002F6BF6 /* DesiVLGTests.m */; };
 		6B69B0E11BC425BA002F6BF6 /* DesiVLGUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0E01BC425BA002F6BF6 /* DesiVLGUITests.m */; };
 		6B69B0F01BC6BDEE002F6BF6 /* MenuIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0EF1BC6BDEE002F6BF6 /* MenuIndexViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6B69B0F31BC6BEE6002F6BF6 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0F21BC6BEE6002F6BF6 /* LocationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6B69B0F61BC6BF00002F6BF6 /* MyPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B69B0F51BC6BF00002F6BF6 /* MyPin.m */; settings = {ASSET_TAGS = (); }; };
 		6B8DE6D01BCFF1570090BC19 /* TimeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6CF1BCFF1570090BC19 /* TimeSelectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6B8DE6D41BCFFA490090BC19 /* OrderOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6D31BCFFA490090BC19 /* OrderOptions.m */; settings = {ASSET_TAGS = (); }; };
@@ -60,6 +63,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B1C7B271BD6CE3000B8AF22 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
+		6B1C7B281BD6CE3000B8AF22 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		6B1C7B2A1BD6CFEB00B8AF22 /* ApplePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePayViewController.h; sourceTree = "<group>"; };
+		6B1C7B2B1BD6CFEB00B8AF22 /* ApplePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplePayViewController.m; sourceTree = "<group>"; };
+		6B1C7B2D1BD6D00B00B8AF22 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		6B1C7B2F1BD6D12900B8AF22 /* applePay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applePay.png; sourceTree = "<group>"; };
 		6B2112DF1BC6F7D600AD78CB /* restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant.png; sourceTree = "<group>"; };
 		6B2BAC291BD17EA100AB4C9F /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		6B2BAC2A1BD17EA100AB4C9F /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
@@ -87,8 +96,6 @@
 		6B69B0E21BC425BA002F6BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B69B0EE1BC6BDEE002F6BF6 /* MenuIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuIndexViewController.h; sourceTree = "<group>"; };
 		6B69B0EF1BC6BDEE002F6BF6 /* MenuIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuIndexViewController.m; sourceTree = "<group>"; };
-		6B69B0F11BC6BEE6002F6BF6 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
-		6B69B0F21BC6BEE6002F6BF6 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		6B69B0F41BC6BF00002F6BF6 /* MyPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPin.h; sourceTree = "<group>"; };
 		6B69B0F51BC6BF00002F6BF6 /* MyPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPin.m; sourceTree = "<group>"; };
 		6B8DE6CE1BCFF1570090BC19 /* TimeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSelectionViewController.h; sourceTree = "<group>"; };
@@ -120,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B1C7B2E1BD6D00B00B8AF22 /* PassKit.framework in Frameworks */,
 				6B9690CE1BCC2D1C001216A4 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +152,7 @@
 		6B69B0AF1BC425BA002F6BF6 = {
 			isa = PBXGroup;
 			children = (
+				6B1C7B2D1BD6D00B00B8AF22 /* PassKit.framework */,
 				6B9690CD1BCC2D1C001216A4 /* libsqlite3.tbd */,
 				6B69B0BA1BC425BA002F6BF6 /* DesiVLG */,
 				6B69B0D41BC425BA002F6BF6 /* DesiVLGTests */,
@@ -186,10 +195,12 @@
 				6B2BAC2A1BD17EA100AB4C9F /* CartViewController.m */,
 				6B2BAC2C1BD182CF00AB4C9F /* OrderTableViewCell.h */,
 				6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */,
-				6B69B0F11BC6BEE6002F6BF6 /* LocationViewController.h */,
-				6B69B0F21BC6BEE6002F6BF6 /* LocationViewController.m */,
 				6B69B0F41BC6BF00002F6BF6 /* MyPin.h */,
 				6B69B0F51BC6BF00002F6BF6 /* MyPin.m */,
+				6B1C7B271BD6CE3000B8AF22 /* PaymentViewController.h */,
+				6B1C7B281BD6CE3000B8AF22 /* PaymentViewController.m */,
+				6B1C7B2A1BD6CFEB00B8AF22 /* ApplePayViewController.h */,
+				6B1C7B2B1BD6CFEB00B8AF22 /* ApplePayViewController.m */,
 				6B69B0C71BC425BA002F6BF6 /* Assets.xcassets */,
 				6B69B0C91BC425BA002F6BF6 /* LaunchScreen.storyboard */,
 				6B69B0CC1BC425BA002F6BF6 /* Info.plist */,
@@ -203,6 +214,7 @@
 		6B69B0BB1BC425BA002F6BF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B1C7B2F1BD6D12900B8AF22 /* applePay.png */,
 				6BADEB531BD150020047CAF1 /* priceTag.png */,
 				6B6592C11BCEEC7000DFC5F5 /* trans.png */,
 				6B6592BD1BCEEA4900DFC5F5 /* orange.png */,
@@ -362,6 +374,7 @@
 				6B69B0C81BC425BA002F6BF6 /* Assets.xcassets in Resources */,
 				6B69B0C61BC425BA002F6BF6 /* Main.storyboard in Resources */,
 				6B6592C21BCEEC7000DFC5F5 /* trans.png in Resources */,
+				6B1C7B301BD6D12900B8AF22 /* applePay.png in Resources */,
 				6B9690BF1BC81C25001216A4 /* Checkmark.png in Resources */,
 				6B9690C11BC81C25001216A4 /* Trailer.png in Resources */,
 				6B6592BC1BCEE99C00DFC5F5 /* transparant.png in Resources */,
@@ -393,6 +406,7 @@
 				6B69B0F01BC6BDEE002F6BF6 /* MenuIndexViewController.m in Sources */,
 				6B2BAC2B1BD17EA100AB4C9F /* CartViewController.m in Sources */,
 				6B8DE6D41BCFFA490090BC19 /* OrderOptions.m in Sources */,
+				6B1C7B291BD6CE3000B8AF22 /* PaymentViewController.m in Sources */,
 				6B69B0C31BC425BA002F6BF6 /* ViewController.m in Sources */,
 				6B8DE6E51BD0148F0090BC19 /* AddAddressViewController.m in Sources */,
 				6B9690C41BC83B39001216A4 /* ItemDetailViewController.m in Sources */,
@@ -400,10 +414,10 @@
 				6B8DE6D71BCFFAEB0090BC19 /* Address.m in Sources */,
 				6B69B0F61BC6BF00002F6BF6 /* MyPin.m in Sources */,
 				6B69B0BD1BC425BA002F6BF6 /* main.m in Sources */,
-				6B69B0F31BC6BEE6002F6BF6 /* LocationViewController.m in Sources */,
 				6B8DE6D01BCFF1570090BC19 /* TimeSelectionViewController.m in Sources */,
 				6B929C4C1BD04668009D8D3C /* ItemTableViewCell.m in Sources */,
 				6B2BAC2E1BD182CF00AB4C9F /* OrderTableViewCell.m in Sources */,
+				6B1C7B2C1BD6CFEB00B8AF22 /* ApplePayViewController.m in Sources */,
 				6B9690D31BCC2DBE001216A4 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
