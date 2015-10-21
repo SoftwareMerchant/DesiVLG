@@ -494,8 +494,6 @@
      CGSize imgSize = cell.priceLabel.frame.size;
      UIGraphicsBeginImageContext( imgSize );
      [img drawInRect:CGRectMake(0,0,imgSize.width,imgSize.height+10)];
-     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-     UIGraphicsEndImageContext();
      cell.priceLabel.backgroundColor = [UIColor colorWithPatternImage:img];
      cell.priceLabel.textColor = [UIColor whiteColor];
      cell.priceLabel.text = [NSString stringWithFormat:@"%.2f",[price floatValue]];

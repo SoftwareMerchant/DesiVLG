@@ -30,10 +30,10 @@
     [self resignFirstResponder];
     if([self.addressField.text isEqual:@""] || [self.cityField.text isEqual:@""] || [self.stateField.text isEqual:@""] || [self.zipField.text isEqual:@""]){
         self.doneBtn.enabled = NO;
-        self.doneBtn.alpha = 1;
+        self.doneBtn.alpha = 0.65;
     }else{
         self.doneBtn.enabled = YES;
-        self.doneBtn.alpha = 0.75;
+        self.doneBtn.alpha = 1;
     }
 }
 
