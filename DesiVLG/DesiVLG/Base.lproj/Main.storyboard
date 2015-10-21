@@ -673,10 +673,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
-                                <rect key="frame" x="123" y="109" width="354" height="165"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
+                                <rect key="frame" x="155" y="108" width="290" height="142"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.1058823529" green="0.27058823529999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="SGa-YS-6Vs"/>
                                     <constraint firstAttribute="width" constant="354" id="WmH-ZH-flN"/>

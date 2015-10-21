@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol AddressDelegate;
 
 @interface AddAddressViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
@@ -15,5 +16,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *stateField;
 @property (weak, nonatomic) IBOutlet UITextField *zipField;
 @property (weak, nonatomic) IBOutlet UIButton *doneBtn;
+
+@property (nonatomic, weak) id<AddressDelegate> delegate;
+
+@end
+
+@protocol AddressDelegate <NSObject>
+
+- (void)addAddressSuccess;
 
 @end

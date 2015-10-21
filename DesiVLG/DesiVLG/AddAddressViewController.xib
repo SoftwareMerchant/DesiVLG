@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -22,17 +22,19 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="- DELIVERY ADDRESS -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCF-Ij-2z3">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                    <animations/>
                     <color key="backgroundColor" red="0.80784313725490198" green="0.47058823529411764" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="wb9-4Y-Jkr"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="textColor" red="0.10588235294117647" green="0.27058823529411763" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-On-Q5Z">
                     <rect key="frame" x="92" y="106" width="486" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="8UE-mV-yUL"/>
                     </constraints>
@@ -44,6 +46,7 @@
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Delivery Notes(Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfX-CC-5Ix">
                     <rect key="frame" x="92" y="175" width="486" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="v6o-2d-Coc"/>
                     </constraints>
@@ -55,6 +58,7 @@
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City/Town" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-7R-Nhw">
                     <rect key="frame" x="92" y="244" width="248" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="Yyt-qJ-UfO"/>
                     </constraints>
@@ -66,6 +70,7 @@
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-94-x2A">
                     <rect key="frame" x="390" y="244" width="188" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="188" id="8Vf-Eh-3gz"/>
                         <constraint firstAttribute="height" constant="45" id="ZVh-56-BDg"/>
@@ -78,6 +83,7 @@
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mar-z7-epB">
                     <rect key="frame" x="92" y="315" width="486" height="30"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="QhM-8b-Hdv"/>
                     </constraints>
@@ -89,6 +95,7 @@
                 </textField>
                 <button opaque="NO" alpha="0.75" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ck-aw-Oe9">
                     <rect key="frame" x="433" y="455" width="145" height="58"/>
+                    <animations/>
                     <color key="backgroundColor" red="0.1058823529" green="0.27058823529999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <state key="normal" title="DONE">
@@ -100,6 +107,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zo6-i4-hXF">
                     <rect key="frame" x="92" y="455" width="143" height="61"/>
+                    <animations/>
                     <color key="backgroundColor" red="0.80760546639999997" green="0.47142278640000002" blue="0.27171880609999999" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <state key="normal" title="CANCEL">
@@ -110,7 +118,8 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <animations/>
+            <color key="backgroundColor" red="0.91764705879999997" green="0.8862745098" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="pJt-On-Q5Z" firstAttribute="top" secondItem="KCF-Ij-2z3" secondAttribute="bottom" constant="30" id="2t6-qE-LBC"/>
                 <constraint firstItem="Zo6-i4-hXF" firstAttribute="leading" secondItem="mar-z7-epB" secondAttribute="leading" id="3Zz-S1-BFJ"/>

@@ -10,7 +10,7 @@
 #import "AddAddressViewController.h"
 #import "AppDelegate.h"
 
-@interface ViewController () 
+@interface ViewController () <AddressDelegate>
 @property (nonatomic,retain) CLLocationManager* locationManager;
 @property (nonatomic,strong) CLGeocoder *geocoder;
 @property (nonatomic) bool delivery;
@@ -127,11 +127,18 @@
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     if(self.delivery && delegate.myOrderOptions.destination == nil){
         AddAddressViewController *addressController = [[AddAddressViewController alloc]  initWithNibName:@"AddAddressViewController" bundle:nil];
-         [self presentViewController:addressController animated:YES completion:nil];
+        addressController.delegate = self;
+        [self presentViewController:addressController animated:YES completion:nil];
     }else{
         [self performSegueWithIdentifier:@"showItemsMenu" sender:self];
     }
     
 }
 
+- (void)addAddressSuccess{
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    if(delegate.myOrderOptions.destination != nil){
+        [self performSegueWithIdentifier:@"showItemsMenu" sender:self];
+    }
+}
 @end

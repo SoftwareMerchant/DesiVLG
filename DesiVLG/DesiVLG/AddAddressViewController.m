@@ -37,6 +37,10 @@
     }
 }
 
+- (Boolean)validAddress{
+    //NOT FINISHED: Set up valid range
+    return YES;
+}
 - (void)saveAddress{
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     OrderOptions *options = delegate.myOrderOptions;
@@ -56,8 +60,21 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)tapDone:(id)sender {
-    [self saveAddress];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if([self validAddress]){
+        [self saveAddress];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.delegate addAddressSuccess];
+    }else{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning"
+                                                                                 message:@"The address is out of our delivery range, please try again!"
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        //We add buttons to the alert controller by creating UIAlertActions:
+        UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:nil];
+        [alertController addAction:actionCancel];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
 }
-
 @end
