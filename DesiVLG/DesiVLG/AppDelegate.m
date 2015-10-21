@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DateAndTimeViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,18 @@
     // Override point for customization after application launch.
     _myOrderOptions = [[OrderOptions alloc] init];
     return YES;
+}
+
+
+- (void)presentAnimationController:(UIButton *)sender
+{
+    if (!self.animationViewController) {
+        self.animationViewController = [[DateAndTimeViewController alloc] init];
+    }
+    if (!self.navigationController) {
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.animationViewController];
+    }
+    [self.window.rootViewController presentModalViewController:self.navigationController animated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
