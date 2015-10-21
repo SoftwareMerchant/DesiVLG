@@ -107,7 +107,7 @@
                         <barButtonItem key="backBarButtonItem" title="ITEMS" id="B0T-TJ-nhq"/>
                         <barButtonItem key="rightBarButtonItem" title="Cart" id="8dF-uO-GgT">
                             <connections>
-                                <segue destination="EvM-s7-zwo" kind="push" id="xa1-yH-gUh"/>
+                                <segue destination="EvM-s7-zwo" kind="push" identifier="pushCart" id="xa1-yH-gUh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -676,6 +676,7 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
                                 <rect key="frame" x="155" y="108" width="290" height="142"/>
                                 <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="165" id="SGa-YS-6Vs"/>
                                     <constraint firstAttribute="width" constant="354" id="WmH-ZH-flN"/>
@@ -685,12 +686,28 @@
                                     <action selector="checkOut:" destination="p4H-zx-ka4" eventType="touchUpInside" id="rQ7-BR-RhY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccu-yT-Ziq">
+                                <rect key="frame" x="163" y="329" width="282" height="153"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="33"/>
+                                <state key="normal" title="PAY IN STORE">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendEmail:" destination="p4H-zx-ka4" eventType="touchUpInside" id="Drk-pH-toG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="leading" secondItem="bho-Uf-6Ay" secondAttribute="leading" id="0Wr-X8-XCz"/>
+                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="trailing" secondItem="bho-Uf-6Ay" secondAttribute="trailing" id="JcY-ZC-XjL"/>
+                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="height" secondItem="bho-Uf-6Ay" secondAttribute="height" id="b9r-Ke-S8K"/>
                             <constraint firstItem="bho-Uf-6Ay" firstAttribute="centerX" secondItem="E4q-ap-eL2" secondAttribute="centerX" id="g5h-Ja-SgO"/>
                             <constraint firstItem="bho-Uf-6Ay" firstAttribute="top" secondItem="neo-Vv-h5n" secondAttribute="bottom" constant="45" id="ntv-Ug-0lA"/>
+                            <constraint firstItem="LEg-zy-p4u" firstAttribute="top" secondItem="ccu-yT-Ziq" secondAttribute="bottom" constant="60" id="ocH-Z2-yew"/>
                             <constraint firstItem="bho-Uf-6Ay" firstAttribute="centerY" secondItem="E4q-ap-eL2" secondAttribute="centerY" id="uVR-bR-fEX"/>
                         </constraints>
                         <variation key="default">

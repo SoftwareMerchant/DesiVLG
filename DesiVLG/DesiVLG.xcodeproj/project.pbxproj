@@ -43,6 +43,7 @@
 		6B9690CE1BCC2D1C001216A4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9690CD1BCC2D1C001216A4 /* libsqlite3.tbd */; };
 		6B9690D31BCC2DBE001216A4 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9690D21BCC2DBE001216A4 /* DBManager.m */; settings = {ASSET_TAGS = (); }; };
 		6BADEB541BD150020047CAF1 /* priceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BADEB531BD150020047CAF1 /* priceTag.png */; settings = {ASSET_TAGS = (); }; };
+		6BF6E5631BD7EF31006641F4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF6E5621BD7EF31006641F4 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		6B9690D11BCC2DBE001216A4 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		6B9690D21BCC2DBE001216A4 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		6BADEB531BD150020047CAF1 /* priceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceTag.png; sourceTree = "<group>"; };
+		6BF6E5621BD7EF31006641F4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		6BF6E5641BD81243006641F4 /* DesiVLG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DesiVLG.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF6E5631BD7EF31006641F4 /* MessageUI.framework in Frameworks */,
 				6B1C7B2E1BD6D00B00B8AF22 /* PassKit.framework in Frameworks */,
 				6B9690CE1BCC2D1C001216A4 /* libsqlite3.tbd in Frameworks */,
 			);
@@ -152,6 +156,7 @@
 		6B69B0AF1BC425BA002F6BF6 = {
 			isa = PBXGroup;
 			children = (
+				6BF6E5621BD7EF31006641F4 /* MessageUI.framework */,
 				6B1C7B2D1BD6D00B00B8AF22 /* PassKit.framework */,
 				6B9690CD1BCC2D1C001216A4 /* libsqlite3.tbd */,
 				6B69B0BA1BC425BA002F6BF6 /* DesiVLG */,
@@ -174,6 +179,7 @@
 		6B69B0BA1BC425BA002F6BF6 /* DesiVLG */ = {
 			isa = PBXGroup;
 			children = (
+				6BF6E5641BD81243006641F4 /* DesiVLG.entitlements */,
 				6B69B0C41BC425BA002F6BF6 /* Main.storyboard */,
 				6B69B0BE1BC425BA002F6BF6 /* AppDelegate.h */,
 				6B69B0BF1BC425BA002F6BF6 /* AppDelegate.m */,
@@ -327,6 +333,12 @@
 				TargetAttributes = {
 					6B69B0B71BC425BA002F6BF6 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = KKX8KEUZ6R;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
 					};
 					6B69B0D01BC425BA002F6BF6 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -557,10 +569,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DesiVLG/DesiVLG.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DesiVLG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -568,10 +584,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DesiVLG/DesiVLG.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DesiVLG/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.softwaremerchant.training.DesiVLG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

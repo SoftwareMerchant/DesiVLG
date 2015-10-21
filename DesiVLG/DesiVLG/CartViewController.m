@@ -126,6 +126,10 @@
     cell.name = [NSString stringWithFormat:@"%@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfName]];
     cell.note = [NSString stringWithFormat:@"%@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfNote]];
     cell.quantityLabel.text = [NSString stringWithFormat:@"%@", [[self.itemArray objectAtIndex:indexPath.row] objectAtIndex:indexOfQuantity]];
+    if([cell.quantityLabel.text isEqualToString:@"0"]){
+        cell.downBtn.enabled = NO;
+        cell.itemPriceLabel.alpha = 0.4;
+    }
     cell.itemNameLabel.text = [NSString stringWithFormat:@"%@($%.2f)", cell.name,cell.unitPrice];
     cell.itemNoteField.text = [NSString stringWithFormat:@"Note: %@", cell.note];
     [cell.itemNoteField setContentOffset:CGPointZero animated:YES];
