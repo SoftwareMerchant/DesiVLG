@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="77" id="rS6-5u-dEU" customClass="ItemTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="77"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rS6-5u-dEU" id="XWF-gB-rRI">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="76.5"/>
@@ -382,7 +382,7 @@
                                     <action selector="confirmPressed:" destination="PO9-7M-c8A" eventType="touchUpInside" id="7uG-a2-WTn"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDg-v2-jyJ" userLabel="Day Picker" customClass="MZDayPicker">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDg-v2-jyJ" userLabel="Day Picker" customClass="MZDayPicker">
                                 <rect key="frame" x="0.0" y="64" width="600" height="88"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -458,7 +458,7 @@
                                 <color key="sectionIndexBackgroundColor" red="0.7725490196" green="0.75686274509999996" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="itemInOrderCell" rowHeight="115" id="PiY-U8-tzP" customClass="OrderTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="115"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PiY-U8-tzP" id="eTK-ax-Woo">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="114.5"/>
@@ -688,7 +688,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
                                 <rect key="frame" x="123" y="109" width="354" height="165"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.1058823529" green="0.27058823529999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
