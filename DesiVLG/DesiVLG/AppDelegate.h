@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "OrderOptions.h"
 
+@class DateAndTimeViewController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property(strong, nonatomic) OrderOptions *myOrderOptions;
+
+@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) DateAndTimeViewController *animationViewController;
+
 
 @end
 
