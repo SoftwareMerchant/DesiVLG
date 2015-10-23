@@ -62,7 +62,7 @@
     int currentYear = [components year]; // gives you year
     int currentHour = [dateComps hour];
     
-    NSLog(@"%d",currentHour);
+    //NSLog(@"%d",currentHour);
     
     
     int daysToAdd = 6;
@@ -82,7 +82,7 @@
     [dateFormatter setDateFormat:@"hh mm a"];
     NSString *str_date = [dateFormatter stringFromDate:[NSDate date]];
     NSMutableArray *currentTimeArray = [str_date componentsSeparatedByString:@" "];
-    NSLog(@"str_date:%@",currentTimeArray);
+    //NSLog(@"str_date:%@",currentTimeArray);
     
     
     
