@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "MyPin.h"
+#import "DateTime.h"
 
 @interface ViewController : UIViewController
 
@@ -19,5 +20,8 @@
 
 @property (copy, nonatomic) MKPlacemark *destination;
 @property (nonatomic, strong) NSMutableArray *annotations;
+
+
+@property (nonatomic) DateTime * currentOrderDateTime;
 @end
 

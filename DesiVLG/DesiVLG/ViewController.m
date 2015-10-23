@@ -10,10 +10,13 @@
 #import "AddAddressViewController.h"
 #import "AppDelegate.h"
 
+
 @interface ViewController () <AddressDelegate>
 @property (nonatomic,retain) CLLocationManager* locationManager;
 @property (nonatomic,strong) CLGeocoder *geocoder;
 @property (nonatomic) bool delivery;
+
+
 @end
 
 @implementation ViewController

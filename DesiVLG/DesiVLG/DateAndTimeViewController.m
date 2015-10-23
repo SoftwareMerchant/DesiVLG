@@ -9,6 +9,8 @@
 #import "DateAndTimeViewController.h"
 #import "FlipView.h"
 #import "AnimationDelegate.h"
+#import "ViewController.h"
+#import "DateTime.h"
 
 
 @interface DateAndTimeViewController () <MZDayPickerDelegate, MZDayPickerDataSource, UITableViewDataSource, UITableViewDelegate>
@@ -31,6 +33,7 @@
 @property (nonatomic) int minutesCounter;
 @property (nonatomic) NSNumber * selectedDay;
 @property (nonatomic) NSString * selectedWeekDay;
+@property (nonatomic) DateTime *currentOrderDateTimeObject;
 
 - (IBAction)confirmPressed:(id)sender;
 
@@ -486,15 +489,7 @@
     [super viewDidUnload];
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 - (IBAction)ampmChange:(id)sender {
     UIButton *button = (UIButton *)sender;
@@ -515,7 +510,38 @@
     
      NSLog(@"%d %d %@ %@ %@",self.hoursCounter,self.minutesCounter,self.selectedDay,self.selectedWeekDay,self.amOrPMString);
     
+    [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];
+    
     
     
 }
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     
+     ViewController *segueToViewController = [segue destinationViewController];
+     self.currentOrderDateTimeObject = [[DateTime alloc]init];
+     self.currentOrderDateTimeObject.selectedDay = self.selectedDay;
+     self.currentOrderDateTimeObject.selectedWeekDay = self.selectedWeekDay;
+     self.currentOrderDateTimeObject.hours = self.hoursCounter;
+     self.currentOrderDateTimeObject.minutes = self.minutesCounter;
+     self.currentOrderDateTimeObject.amPM = self.amOrPMString;
+
+     [segueToViewController setCurrentOrderDateTime:self.currentOrderDateTimeObject];
+     
+     NSLog(@"%@", self.currentOrderDateTimeObject);
+ 
+ }
+
+
+
+
+
+
 @end
+
+
+
