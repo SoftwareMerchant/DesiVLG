@@ -20,16 +20,19 @@
 - (IBAction)ampmChange:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *ampmButton;
 
-@property (nonatomic) NSString* amOrPMString;
+
 
 @property (nonatomic) BOOL isMinutesFlip;
 @property (nonatomic) BOOL isHoursFlip;
 
+
+@property (nonatomic) NSString* amOrPMString;
 @property (nonatomic) int hoursCounter;
 @property (nonatomic) int minutesCounter;
 @property (nonatomic) NSNumber * selectedDay;
 @property (nonatomic) NSString * selectedWeekDay;
 
+- (IBAction)confirmPressed:(id)sender;
 
 @end
 
@@ -48,7 +51,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    
     
     NSDate *currentDate = [NSDate date];
     NSCalendar* calendar = [NSCalendar currentCalendar];
@@ -62,7 +65,7 @@
     int currentYear = [components year]; // gives you year
     int currentHour = [dateComps hour];
     
-    //NSLog(@"%d",currentHour);
+    NSLog(@"%d",currentHour);
     
     
     int daysToAdd = 6;
@@ -82,7 +85,7 @@
     [dateFormatter setDateFormat:@"hh mm a"];
     NSString *str_date = [dateFormatter stringFromDate:[NSDate date]];
     NSMutableArray *currentTimeArray = [str_date componentsSeparatedByString:@" "];
-    //NSLog(@"str_date:%@",currentTimeArray);
+    NSLog(@"str_date:%@",currentTimeArray);
     
     
     
@@ -94,7 +97,7 @@
     int currentMinuteCounter = [currentTimeArray[1] intValue];
     float minuteUnit = ceil((float) currentMinuteCounter / 15.0);
     int currentMinutes = minuteUnit * 15.0;
-   // NSLog(@"%d",currentMinutes);
+    // NSLog(@"%d",currentMinutes);
     self.minutesCounter = 00;
     
     
@@ -126,10 +129,13 @@
     [self.dayPicker setStartDate:[NSDate dateFromDay:currentDay month:currentMonth year:currentYear] endDate:[NSDate dateFromDay:endDay month:endMonth year:endYear]];
     
     [self.dayPicker setCurrentDate:[NSDate dateFromDay:currentDay month:currentMonth year:currentYear] animated:YES];
-    self.selectedDay = [NSNumber numberWithInt:20];
+    NSDateFormatter *newDateFormatter = [[NSDateFormatter alloc] init];
+    [newDateFormatter setDateFormat:@"EEEE"];
+    self.selectedWeekDay = [newDateFormatter stringFromDate:[NSDate date]];
+    self.selectedDay = [NSNumber numberWithInt:currentDay];
     
     animationDelegate = [[AnimationDelegate alloc] initWithSequenceType:kSequenceControlled
-                                                           directionType:kDirectionForward];
+                                                          directionType:kDirectionForward];
     animationDelegate.controller = self;
     animationDelegate.perspectiveDepth = 2000;
     
@@ -137,7 +143,7 @@
                                                       frame:CGRectMake(20, 270, 90, 200)];
     //self.flipView.layer.borderWidth=1;
     //self.flipView.layer.borderColor = [UIColor colorWithRed:0.88 green:0.42 blue:0.06 alpha:1].CGColor;
-
+    
     animationDelegate.transformView  = self.flipView;
     
     [self.view addSubview:self.flipView];
@@ -161,9 +167,9 @@
         [self.flipView printText:@" " usingImage:[UIImage imageNamed:[NSString stringWithFormat:@"flipno%d",i]] backgroundColor:[UIColor  clearColor] textColor:[UIColor whiteColor]];
     }
     
-//    [self.flipView printText:@" " usingImage:[UIImage imageNamed:@"flipno02"] backgroundColor:[UIColor  clearColor] textColor:[UIColor whiteColor]];
-
-
+    //    [self.flipView printText:@" " usingImage:[UIImage imageNamed:@"flipno02"] backgroundColor:[UIColor  clearColor] textColor:[UIColor whiteColor]];
+    
+    
     
     self.flipView.fontSize = 130;
     self.flipView.fontAlignment = @"center";
@@ -174,13 +180,13 @@
     
     
     animationDelegate2 = [[AnimationDelegate alloc] initWithSequenceType:kSequenceControlled
-                                                          directionType:kDirectionForward];
+                                                           directionType:kDirectionForward];
     animationDelegate2.controller = self;
     animationDelegate2.perspectiveDepth = 2000;
- 
+    
     
     self.flipView2 = [[FlipView alloc] initWithAnimationType:kAnimationFlipVertical
-                                                      frame:CGRectMake(120, 275, 190, 190)];
+                                                       frame:CGRectMake(120, 275, 190, 190)];
     //self.flipView.layer.borderWidth=1;
     //self.flipView.layer.borderColor = [UIColor colorWithRed:0.88 green:0.42 blue:0.06 alpha:1].CGColor;
     
@@ -203,7 +209,7 @@
     [self.flipView2 printText:@" " usingImage:[UIImage imageNamed:@"flipmin30"] backgroundColor:[UIColor clearColor] textColor:[UIColor whiteColor]];
     
     [self.flipView2 printText:@" " usingImage:[UIImage imageNamed:@"flipmin45"] backgroundColor:[UIColor clearColor] textColor:[UIColor whiteColor]];
-
+    
     
     self.flipView2.fontSize = 130;
     self.flipView2.fontAlignment = @"center";
@@ -229,7 +235,7 @@
     self.panRecognizer2.maximumNumberOfTouches = 1;
     self.panRecognizer2.minimumNumberOfTouches = 1;
     [self.panRegion2 addGestureRecognizer:self.panRecognizer2];
-
+    
     
     
     
@@ -240,7 +246,7 @@
 - (void)panned:(UIPanGestureRecognizer *)recognizer
 {
     //NSLog(@"Gesture for hours");
-    
+    self.isMinutesFlip = NO;
     switch (recognizer.state) {
         case UIGestureRecognizerStatePossible:
             break;
@@ -298,6 +304,8 @@
 - (void)panned2:(UIPanGestureRecognizer *)recognizer2
 {
     //NSLog(@"Gesture for minutes");
+    self.isHoursFlip = NO;
+
     switch (recognizer2.state) {
         case UIGestureRecognizerStatePossible:
             break;
@@ -350,7 +358,7 @@
     
     
     self.isMinutesFlip = YES;
-   
+    
 }
 
 
@@ -368,7 +376,7 @@
                     }
                     
                     NSLog(@"You did a forward minute flip");
-                    NSLog(@"new minutes data %d",self.minutesCounter);
+                    NSLog(@"new minutes data - %d",self.minutesCounter);
                 } else {
                     NSLog(@"You did a backward minute flip");
                     if (self.minutesCounter == 00) {
@@ -376,11 +384,11 @@
                     } else {
                         self.minutesCounter = self.minutesCounter - 15;
                     }
-                    NSLog(@"new Hour%d",self.minutesCounter);
+                    NSLog(@"new minutes data - %d",self.minutesCounter);
                 }
-
                 
-
+                
+                
             }
             if (self.isHoursFlip==YES) {
                 if (direction==-1) {
@@ -391,7 +399,7 @@
                     }
                     
                     NSLog(@"You did a forward hour flip");
-                    NSLog(@"new Hour%d",self.hoursCounter);
+                    NSLog(@"New selected Hour - %d",self.hoursCounter);
                 } else {
                     NSLog(@"You did a backward hour flip");
                     if (self.hoursCounter == 1) {
@@ -399,20 +407,21 @@
                     } else {
                         self.hoursCounter = self.hoursCounter - 1;
                     }
-                    NSLog(@"new Hour%d",self.hoursCounter);
+                    NSLog(@"New selected Hour - %d",self.hoursCounter);
                 }
                 
             }
-             self.isHoursFlip = NO;
-            self.isMinutesFlip = NO;
-          
-
+            
+            
+            
             break;
         case 1:
-             NSLog(@"You did not do a flip");
+            NSLog(@"You did not do a flip");
             break;
         default:break;
     }
+    
+   
 }
 
 
@@ -456,7 +465,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
-   
+    
     MZDay *day = self.tableData[indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@",day.date];
@@ -478,14 +487,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)ampmChange:(id)sender {
     UIButton *button = (UIButton *)sender;
@@ -499,6 +508,13 @@
         self.amOrPMString = @"AM";
         NSLog(@"Time set to AM");
     }
+    
+    
+}
+- (IBAction)confirmPressed:(id)sender {
+    
+     NSLog(@"%d %d %@ %@ %@",self.hoursCounter,self.minutesCounter,self.selectedDay,self.selectedWeekDay,self.amOrPMString);
+    
     
     
 }
