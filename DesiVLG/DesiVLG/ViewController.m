@@ -15,6 +15,7 @@
 @property (nonatomic,retain) CLLocationManager* locationManager;
 @property (nonatomic,strong) CLGeocoder *geocoder;
 @property (nonatomic) bool delivery;
+@property (weak, nonatomic) IBOutlet UILabel *orderTimeLabel;
 
 
 @end
@@ -33,6 +34,16 @@
     // Do any additional setup after loading the view from its nib.
     _geocoder=[[CLGeocoder alloc]init];
     [self location];
+    
+    if(!(self.currentOrderDateTime == nil)) {
+        NSString *labelText = [NSString stringWithFormat:@"Get your order on %@, %@ @ %d:%d %@", self.currentOrderDateTime.selectedDay,self.currentOrderDateTime.selectedWeekDay,self.currentOrderDateTime.hours,self.currentOrderDateTime.minutes,self.currentOrderDateTime.amPM];
+        NSLog(@"Object present");
+        self.orderTimeLabel.text = labelText;
+    } else {
+        NSLog(@"Object not present");
+        self.orderTimeLabel.text = @"Get Your Meal ASAP";
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

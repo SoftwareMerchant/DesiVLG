@@ -95,7 +95,7 @@
     
     self.amOrPMString = currentTimeArray[2];
     [self.ampmButton setTitle:currentTimeArray[2] forState:UIControlStateNormal];
-    int currentHourCounter = [currentTimeArray[0] intValue];
+    int currentHourCounter = [currentTimeArray[0] intValue] + 1;
     self.hoursCounter = currentHourCounter;
     int currentMinuteCounter = [currentTimeArray[1] intValue];
     float minuteUnit = ceil((float) currentMinuteCounter / 15.0);

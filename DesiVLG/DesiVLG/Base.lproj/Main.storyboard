@@ -859,6 +859,7 @@
                     <connections>
                         <outlet property="deliveryBtn" destination="KfU-Ej-lsk" id="Z9B-Gc-g2M"/>
                         <outlet property="mapView" destination="Env-Ym-lac" id="TrK-JJ-IIP"/>
+                        <outlet property="orderTimeLabel" destination="vz0-rW-dIO" id="92T-Fy-W8P"/>
                         <outlet property="pickUpBtn" destination="3Cg-0i-IVK" id="f3o-24-Dnj"/>
                         <segue destination="Z9V-wz-8Bk" kind="show" identifier="showItemsMenu" id="z02-iW-7rr"/>
                     </connections>
