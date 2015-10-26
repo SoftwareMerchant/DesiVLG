@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vJ9-9W-9oQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vJ9-9W-9oQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -697,6 +697,7 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmPressed:" destination="AZM-CG-wrI" eventType="touchUpInside" id="fkP-re-byY"/>
+                                    <segue destination="2Wg-ep-qA0" kind="unwind" unwindAction="backToMainView:" id="NlP-8U-hvK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzr-kJ-jxy">
@@ -731,10 +732,10 @@
                     <connections>
                         <outlet property="ampmButton" destination="Vzr-kJ-jxy" id="cwc-Vr-BwT"/>
                         <outlet property="dayPicker" destination="lFv-QI-q1e" id="fM2-T7-zaB"/>
-                        <segue destination="ePW-b1-mpx" kind="show" identifier="ConfirmedOrderDateTimeSegue" id="c12-0a-xq4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZh-Yr-oEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2Wg-ep-qA0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="540" y="-1829"/>
         </scene>
@@ -813,7 +814,7 @@
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.8862745098" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="NOW">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="tapNow:" destination="ePW-b1-mpx" eventType="touchUpInside" id="eSg-DD-cuD"/>
@@ -988,7 +989,6 @@ Sunday:	12:00 PM - 03:30 PM
         <image name="trans.png" width="895" height="164"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c12-0a-xq4"/>
         <segue reference="xa1-yH-gUh"/>
     </inferredMetricsTieBreakers>
 </document>

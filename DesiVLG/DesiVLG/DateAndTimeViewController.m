@@ -28,12 +28,7 @@
 @property (nonatomic) BOOL isHoursFlip;
 
 
-@property (nonatomic) NSString* amOrPMString;
-@property (nonatomic) int hoursCounter;
-@property (nonatomic) int minutesCounter;
-@property (nonatomic) NSNumber * selectedDay;
-@property (nonatomic) NSString * selectedWeekDay;
-@property (nonatomic) DateTime *currentOrderDateTimeObject;
+
 
 - (IBAction)confirmPressed:(id)sender;
 
@@ -510,7 +505,7 @@
     
     NSLog(@"%d %d %@ %@ %@",self.hoursCounter,self.minutesCounter,self.selectedDay,self.selectedWeekDay,self.amOrPMString);
     
-    [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];
+  //  [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];
     
     
     
@@ -522,7 +517,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    ViewController *segueToViewController = [segue destinationViewController];
+    //ViewController *segueToViewController = [segue destinationViewController];
     self.currentOrderDateTimeObject = [[DateTime alloc]init];
     self.currentOrderDateTimeObject.selectedDay = self.selectedDay;
     self.currentOrderDateTimeObject.selectedWeekDay = self.selectedWeekDay;
@@ -530,7 +525,7 @@
     self.currentOrderDateTimeObject.minutes = self.minutesCounter;
     self.currentOrderDateTimeObject.amPM = self.amOrPMString;
     
-    [segueToViewController setCurrentOrderDateTime:self.currentOrderDateTimeObject];
+   // [segueToViewController setCurrentOrderDateTime:self.currentOrderDateTimeObject];
     
     NSLog(@"%@", self.currentOrderDateTimeObject);
     

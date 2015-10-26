@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "MZDayPicker.h"
+#import "DateTime.h"
 
 @class FlipView;
 @class AnimationDelegate;
@@ -35,6 +36,13 @@
 
 @property (nonatomic, retain) UIPanGestureRecognizer *panRecognizer;
 @property (nonatomic, retain) UIPanGestureRecognizer *panRecognizer2;
+
+@property (nonatomic) NSString* amOrPMString;
+@property (nonatomic) int hoursCounter;
+@property (nonatomic) int minutesCounter;
+@property (nonatomic) NSNumber * selectedDay;
+@property (nonatomic) NSString * selectedWeekDay;
+@property (nonatomic) DateTime *currentOrderDateTimeObject;
 
 
 - (void)panned:(UIPanGestureRecognizer *)recognizer;

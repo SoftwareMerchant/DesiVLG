@@ -35,31 +35,7 @@
     _geocoder=[[CLGeocoder alloc]init];
     [self location];
     
-    if(!(self.currentOrderDateTime == nil)) {
-        NSString *labelText = [NSString stringWithFormat:@"On %@, %@ @ %d:%d %@", self.currentOrderDateTime.selectedDay,self.currentOrderDateTime.selectedWeekDay,self.currentOrderDateTime.hours,self.currentOrderDateTime.minutes,self.currentOrderDateTime.amPM];
-        NSLog(@"Object present");
-        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-        delegate.myOrderOptions.time = self.currentOrderDateTime;
-        self.orderTimeLabel.text = labelText;
-        self.nowBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
-        self.nowBtn.backgroundColor = [UIColor lightGrayColor];
-        [self.nowBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        self.laterBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:35.0];
-        self.laterBtn.backgroundColor = self.orderTimeLabel.backgroundColor;
-        [self.laterBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-        self.nowBtn.enabled = YES;
-    } else {
-        NSLog(@"Object not present");
-        self.orderTimeLabel.text = @"Get Your Meal ASAP";
-
-        self.laterBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
-        self.laterBtn.backgroundColor = [UIColor lightGrayColor];
-        [self.laterBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        self.nowBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:35.0];
-        self.nowBtn.backgroundColor = self.orderTimeLabel.backgroundColor;
-        [self.nowBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-        self.nowBtn.enabled = NO;
-    }
+    
     
 }
 
@@ -185,6 +161,37 @@
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     if(delegate.myOrderOptions.destination != nil){
         [self performSegueWithIdentifier:@"showItemsMenu" sender:self];
+    }
+}
+
+
+-(IBAction)backToMainView: (UIStoryboardSegue *)segue {
+    DateAndTimeViewController *dateTimeVCObject = segue.sourceViewController;
+    [self setCurrentOrderDateTime:dateTimeVCObject.currentOrderDateTimeObject];
+    if(!(self.currentOrderDateTime == nil)) {
+        NSString *labelText = [NSString stringWithFormat:@"On %@, %@ @ %d:%d %@", self.currentOrderDateTime.selectedDay,self.currentOrderDateTime.selectedWeekDay,self.currentOrderDateTime.hours,self.currentOrderDateTime.minutes,self.currentOrderDateTime.amPM];
+        NSLog(@"Object present");
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        delegate.myOrderOptions.time = self.currentOrderDateTime;
+        self.orderTimeLabel.text = labelText;
+        self.nowBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
+        self.nowBtn.backgroundColor = [UIColor lightGrayColor];
+        [self.nowBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        self.laterBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:35.0];
+        self.laterBtn.backgroundColor = self.orderTimeLabel.backgroundColor;
+        [self.laterBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+        self.nowBtn.enabled = YES;
+    } else {
+        NSLog(@"Object not present");
+        self.orderTimeLabel.text = @"Get Your Meal ASAP";
+        
+        self.laterBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
+        self.laterBtn.backgroundColor = [UIColor lightGrayColor];
+        [self.laterBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        self.nowBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:35.0];
+        self.nowBtn.backgroundColor = self.orderTimeLabel.backgroundColor;
+        [self.nowBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+        self.nowBtn.enabled = NO;
     }
 }
 @end
