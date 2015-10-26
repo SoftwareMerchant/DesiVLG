@@ -619,21 +619,17 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
-                                <rect key="frame" x="155" y="108" width="290" height="142"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Uf-6Ay">
+                                <rect key="frame" x="124" y="397" width="382" height="137"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="165" id="SGa-YS-6Vs"/>
-                                    <constraint firstAttribute="width" constant="354" id="WmH-ZH-flN"/>
-                                </constraints>
                                 <state key="normal" image="applePay.png"/>
                                 <connections>
-                                    <action selector="checkOut:" destination="p4H-zx-ka4" eventType="touchUpInside" id="rQ7-BR-RhY"/>
+                                    <action selector="checkOut:" destination="p4H-zx-ka4" eventType="touchUpInside" id="eqy-wF-4G6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccu-yT-Ziq">
-                                <rect key="frame" x="163" y="329" width="282" height="153"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccu-yT-Ziq">
+                                <rect key="frame" x="124" y="241" width="382" height="124"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="33"/>
@@ -644,24 +640,83 @@
                                     <action selector="sendEmail:" destination="p4H-zx-ka4" eventType="touchUpInside" id="Drk-pH-toG"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please Input Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OnD-Xb-7Nh">
+                                <rect key="frame" x="124" y="58" width="352" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="- YOUR CONTACT -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJL-wm-Ncp">
+                                <rect key="frame" x="124" y="0.0" width="352" height="31"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.27058823529999998" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ftR-tN-qD7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please Input Your Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORt-1F-NAX">
+                                <rect key="frame" x="124" y="147" width="352" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="leading" secondItem="bho-Uf-6Ay" secondAttribute="leading" id="0Wr-X8-XCz"/>
-                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="trailing" secondItem="bho-Uf-6Ay" secondAttribute="trailing" id="JcY-ZC-XjL"/>
-                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="height" secondItem="bho-Uf-6Ay" secondAttribute="height" id="b9r-Ke-S8K"/>
-                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="centerX" secondItem="E4q-ap-eL2" secondAttribute="centerX" id="g5h-Ja-SgO"/>
-                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="top" secondItem="neo-Vv-h5n" secondAttribute="bottom" constant="45" id="ntv-Ug-0lA"/>
-                            <constraint firstItem="LEg-zy-p4u" firstAttribute="top" secondItem="ccu-yT-Ziq" secondAttribute="bottom" constant="60" id="ocH-Z2-yew"/>
+                            <constraint firstItem="ORt-1F-NAX" firstAttribute="leading" secondItem="E4q-ap-eL2" secondAttribute="leading" constant="20" id="3dz-Sp-cTg"/>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="leading" secondItem="E4q-ap-eL2" secondAttribute="leading" id="4w5-9f-Gbs"/>
+                            <constraint firstAttribute="trailing" secondItem="bho-Uf-6Ay" secondAttribute="trailing" id="600-13-nGo"/>
+                            <constraint firstItem="LEg-zy-p4u" firstAttribute="top" secondItem="bho-Uf-6Ay" secondAttribute="bottom" constant="10" id="871-5C-AlD"/>
+                            <constraint firstAttribute="trailing" secondItem="kJL-wm-Ncp" secondAttribute="trailing" id="9vJ-Ou-3sa"/>
+                            <constraint firstItem="kJL-wm-Ncp" firstAttribute="top" secondItem="neo-Vv-h5n" secondAttribute="bottom" id="CZr-mH-fyg"/>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="width" secondItem="ccu-yT-Ziq" secondAttribute="width" id="DFq-pj-wT7"/>
+                            <constraint firstItem="kJL-wm-Ncp" firstAttribute="leading" secondItem="E4q-ap-eL2" secondAttribute="leading" id="DPz-Oj-UPh"/>
+                            <constraint firstItem="OnD-Xb-7Nh" firstAttribute="centerX" secondItem="E4q-ap-eL2" secondAttribute="centerX" id="E56-LG-dSI"/>
+                            <constraint firstItem="ORt-1F-NAX" firstAttribute="top" secondItem="OnD-Xb-7Nh" secondAttribute="bottom" constant="20" id="Jjb-pU-FZL"/>
+                            <constraint firstItem="OnD-Xb-7Nh" firstAttribute="trailing" secondItem="kJL-wm-Ncp" secondAttribute="trailing" id="LkB-hs-SIX"/>
+                            <constraint firstAttribute="trailing" secondItem="ccu-yT-Ziq" secondAttribute="trailing" constant="50" id="MRp-SR-pFJ"/>
+                            <constraint firstAttribute="trailing" secondItem="OnD-Xb-7Nh" secondAttribute="trailing" constant="20" id="NLF-wS-GDI"/>
+                            <constraint firstItem="OnD-Xb-7Nh" firstAttribute="leading" secondItem="kJL-wm-Ncp" secondAttribute="leading" id="NmL-oV-uk1"/>
+                            <constraint firstItem="ORt-1F-NAX" firstAttribute="trailing" secondItem="kJL-wm-Ncp" secondAttribute="trailing" id="OVd-dV-zaQ"/>
+                            <constraint firstItem="ORt-1F-NAX" firstAttribute="height" secondItem="OnD-Xb-7Nh" secondAttribute="height" id="SF7-Jb-dtb"/>
+                            <constraint firstItem="LEg-zy-p4u" firstAttribute="top" secondItem="bho-Uf-6Ay" secondAttribute="bottom" id="SfP-db-MXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="bho-Uf-6Ay" secondAttribute="trailing" constant="50" id="UCd-yv-SUO"/>
+                            <constraint firstItem="ORt-1F-NAX" firstAttribute="centerX" secondItem="E4q-ap-eL2" secondAttribute="centerX" id="VE7-Zp-ywC"/>
+                            <constraint firstItem="ORt-1F-NAX" firstAttribute="leading" secondItem="kJL-wm-Ncp" secondAttribute="leading" id="ZgK-kQ-RZs"/>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="top" secondItem="ccu-yT-Ziq" secondAttribute="bottom" constant="20" id="bn3-JF-KfW"/>
+                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="top" secondItem="ORt-1F-NAX" secondAttribute="bottom" constant="40" id="c5C-kv-M4N"/>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="leading" secondItem="E4q-ap-eL2" secondAttribute="leading" constant="50" id="h6O-EO-TRY"/>
+                            <constraint firstAttribute="trailing" secondItem="ORt-1F-NAX" secondAttribute="trailing" constant="20" id="iJm-ot-vfX"/>
+                            <constraint firstItem="OnD-Xb-7Nh" firstAttribute="top" secondItem="kJL-wm-Ncp" secondAttribute="bottom" constant="20" id="kl4-mJ-4wr"/>
+                            <constraint firstItem="kJL-wm-Ncp" firstAttribute="centerX" secondItem="E4q-ap-eL2" secondAttribute="centerX" id="ldv-oX-Amz"/>
+                            <constraint firstItem="ccu-yT-Ziq" firstAttribute="leading" secondItem="E4q-ap-eL2" secondAttribute="leading" constant="50" id="ncp-nU-2Fv"/>
+                            <constraint firstItem="OnD-Xb-7Nh" firstAttribute="leading" secondItem="E4q-ap-eL2" secondAttribute="leading" constant="20" id="qeQ-hN-yU1"/>
+                            <constraint firstItem="bho-Uf-6Ay" firstAttribute="height" secondItem="ccu-yT-Ziq" secondAttribute="height" id="rEF-n0-QSk"/>
                             <constraint firstItem="bho-Uf-6Ay" firstAttribute="centerY" secondItem="E4q-ap-eL2" secondAttribute="centerY" id="uVR-bR-fEX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="LkB-hs-SIX"/>
+                                <exclude reference="NmL-oV-uk1"/>
+                                <exclude reference="OVd-dV-zaQ"/>
+                                <exclude reference="ZgK-kQ-RZs"/>
+                                <exclude reference="4w5-9f-Gbs"/>
+                                <exclude reference="600-13-nGo"/>
                                 <exclude reference="uVR-bR-fEX"/>
+                                <exclude reference="SfP-db-MXQ"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="applePayBtn" destination="bho-Uf-6Ay" id="Mh6-g4-lVt"/>
+                        <outlet property="nameInput" destination="OnD-Xb-7Nh" id="yXN-iU-jT6"/>
+                        <outlet property="payLaterBtn" destination="ccu-yT-Ziq" id="PNW-WH-Zaz"/>
+                        <outlet property="phoneInput" destination="ORt-1F-NAX" id="JTA-5v-Uma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRD-Xk-2XO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

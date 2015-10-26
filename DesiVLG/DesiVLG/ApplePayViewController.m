@@ -110,13 +110,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"trans.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ScreenLaunch.png"]];
+    self.applePayBtn.enabled = NO;
+    self.payLaterBtn.enabled = NO;
+    
+    [self.payLaterBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    UITapGestureRecognizer * tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(processTap)];
+    [self.view addGestureRecognizer:tapGesturRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)processTap{
+    //  [self.quantityInput resignFirstResponder];
+    [self.nameInput resignFirstResponder];
+    [self.phoneInput resignFirstResponder];
+    if([self.nameInput.text isEqualToString:@""] || [self.phoneInput.text isEqualToString:@""]){
+        self.applePayBtn.enabled = NO;
+        self.payLaterBtn.enabled = NO;
+        [self.payLaterBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    }else{
+        self.applePayBtn.enabled = YES;
+        self.payLaterBtn.enabled = YES;
+        [self.payLaterBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+}
+
 
 //Method writes a string to a text file
 -(void) writeToTextFile{
@@ -130,6 +152,7 @@
                           documentsDirectory];
     //create content
     NSMutableString *content = [[NSMutableString alloc] init];
+    [content appendFormat:@"Order From %@(Phone:%@).\n\n",self.nameInput.text,self.phoneInput.text];
     //Set order options
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     OrderOptions *options = delegate.myOrderOptions;

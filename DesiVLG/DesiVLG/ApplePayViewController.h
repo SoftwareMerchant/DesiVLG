@@ -21,8 +21,10 @@
 @property (nonatomic, strong) DBManager *dbManager;
 
 @property (nonatomic, strong) NSArray *itemArray;
-
-- (IBAction)checkOut:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *nameInput;
+@property (weak, nonatomic) IBOutlet UITextField *phoneInput;
+@property (weak, nonatomic) IBOutlet UIButton *applePayBtn;
+@property (weak, nonatomic) IBOutlet UIButton *payLaterBtn;
 
 @end
 
