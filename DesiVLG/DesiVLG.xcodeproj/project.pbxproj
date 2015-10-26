@@ -32,6 +32,9 @@
 		6B8DE6D71BCFFAEB0090BC19 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6D61BCFFAEB0090BC19 /* Address.m */; };
 		6B8DE6E21BD002050090BC19 /* AddAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8DE6E01BD002050090BC19 /* AddAddressViewController.xib */; };
 		6B8DE6E51BD0148F0090BC19 /* AddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8DE6E41BD0148F0090BC19 /* AddAddressViewController.m */; };
+		6B8E26B81BDAD9FD000A91AC /* Shopping-Cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8E26B71BDAD9FD000A91AC /* Shopping-Cart.png */; settings = {ASSET_TAGS = (); }; };
+		6B8E26BB1BDADEED000A91AC /* minus_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8E26B91BDADEED000A91AC /* minus_alt.png */; settings = {ASSET_TAGS = (); }; };
+		6B8E26BC1BDADEED000A91AC /* plus_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B8E26BA1BDADEED000A91AC /* plus_alt.png */; settings = {ASSET_TAGS = (); }; };
 		6B929C4C1BD04668009D8D3C /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B929C4B1BD04668009D8D3C /* ItemTableViewCell.m */; };
 		6B9690BF1BC81C25001216A4 /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9690BC1BC81C25001216A4 /* Checkmark.png */; };
 		6B9690C01BC81C25001216A4 /* Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9690BD1BC81C25001216A4 /* Marker.png */; };
@@ -114,6 +117,9 @@
 		6B8DE6E01BD002050090BC19 /* AddAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAddressViewController.xib; sourceTree = "<group>"; };
 		6B8DE6E31BD0148F0090BC19 /* AddAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAddressViewController.h; sourceTree = "<group>"; };
 		6B8DE6E41BD0148F0090BC19 /* AddAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAddressViewController.m; sourceTree = "<group>"; };
+		6B8E26B71BDAD9FD000A91AC /* Shopping-Cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shopping-Cart.png"; sourceTree = "<group>"; };
+		6B8E26B91BDADEED000A91AC /* minus_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus_alt.png; sourceTree = "<group>"; };
+		6B8E26BA1BDADEED000A91AC /* plus_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_alt.png; sourceTree = "<group>"; };
 		6B929C4A1BD04668009D8D3C /* ItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableViewCell.h; sourceTree = "<group>"; };
 		6B929C4B1BD04668009D8D3C /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		6B9690BC1BC81C25001216A4 /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 				7DEAA81A1BD9A6840085693B /* MZDayPicker.m */,
 				7DEAA81B1BD9A6840085693B /* MZDayPickerCell.h */,
 				7DEAA81C1BD9A6840085693B /* MZDayPickerCell.m */,
+				6B8E26B91BDADEED000A91AC /* minus_alt.png */,
+				6B8E26BA1BDADEED000A91AC /* plus_alt.png */,
+				6B8E26B71BDAD9FD000A91AC /* Shopping-Cart.png */,
 				6B1C7B2F1BD6D12900B8AF22 /* applePay.png */,
 				6BADEB531BD150020047CAF1 /* priceTag.png */,
 				6B6592C11BCEEC7000DFC5F5 /* trans.png */,
@@ -429,8 +438,11 @@
 				6B1C7B301BD6D12900B8AF22 /* applePay.png in Resources */,
 				6B9690BF1BC81C25001216A4 /* Checkmark.png in Resources */,
 				6B9690C11BC81C25001216A4 /* Trailer.png in Resources */,
+				6B8E26BC1BDADEED000A91AC /* plus_alt.png in Resources */,
 				6B6592BC1BCEE99C00DFC5F5 /* transparant.png in Resources */,
 				6B9690C01BC81C25001216A4 /* Marker.png in Resources */,
+				6B8E26BB1BDADEED000A91AC /* minus_alt.png in Resources */,
+				6B8E26B81BDAD9FD000A91AC /* Shopping-Cart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
