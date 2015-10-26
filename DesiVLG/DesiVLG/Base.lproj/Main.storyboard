@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--ITEMS-->
@@ -755,13 +754,9 @@
                                     <segue destination="2Wg-ep-qA0" kind="unwind" unwindAction="backToMainView:" id="NlP-8U-hvK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzr-kJ-jxy">
-                                <rect key="frame" x="526" y="210" width="54" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzr-kJ-jxy">
+                                <rect key="frame" x="532" y="151" width="54" height="39"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="8h0-Db-2L7"/>
-                                    <constraint firstAttribute="height" constant="39" id="oxF-YN-pUd"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="29"/>
                                 <state key="normal" title="AM">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -775,11 +770,11 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lFv-QI-q1e" firstAttribute="top" secondItem="Be4-1A-6h5" secondAttribute="bottom" id="45R-JQ-siq"/>
-                            <constraint firstItem="Vzr-kJ-jxy" firstAttribute="trailing" secondItem="Rv5-Z6-NEP" secondAttribute="trailingMargin" id="MwR-DK-8eg"/>
                             <constraint firstItem="2q2-QE-kEj" firstAttribute="bottom" secondItem="s8A-zC-EqL" secondAttribute="top" id="O33-X6-Zmm"/>
+                            <constraint firstItem="Vzr-kJ-jxy" firstAttribute="top" secondItem="lFv-QI-q1e" secondAttribute="bottom" constant="8" id="QcS-DT-vBy"/>
+                            <constraint firstAttribute="trailing" secondItem="Vzr-kJ-jxy" secondAttribute="trailing" constant="8" id="SjW-sV-YCg"/>
                             <constraint firstItem="lFv-QI-q1e" firstAttribute="trailing" secondItem="2q2-QE-kEj" secondAttribute="trailing" id="ZIJ-g3-pcq"/>
                             <constraint firstItem="2q2-QE-kEj" firstAttribute="leading" secondItem="lFv-QI-q1e" secondAttribute="leading" id="byP-X6-uDl"/>
-                            <constraint firstAttribute="bottom" secondItem="Vzr-kJ-jxy" secondAttribute="bottom" constant="287" id="iVc-aV-i7I"/>
                             <constraint firstAttribute="trailing" secondItem="lFv-QI-q1e" secondAttribute="trailing" id="sel-Ao-IEa"/>
                             <constraint firstItem="lFv-QI-q1e" firstAttribute="leading" secondItem="Rv5-Z6-NEP" secondAttribute="leading" id="zki-8p-WsV"/>
                         </constraints>

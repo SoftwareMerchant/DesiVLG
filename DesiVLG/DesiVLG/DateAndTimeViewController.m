@@ -50,6 +50,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //View Size calculation
+    int marginSpace = ([[UIScreen mainScreen] bounds].size.width - 90 - 190)/3;
     
     NSDate *currentDate = [NSDate date];
     NSCalendar* calendar = [NSCalendar currentCalendar];
@@ -101,10 +103,6 @@
     
     
     
-    
-    
-    
-    
     self.title = @"Order for Later";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ScreenLaunch.png"]];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
@@ -137,8 +135,10 @@
     animationDelegate.controller = self;
     animationDelegate.perspectiveDepth = 2000;
     
+    
+    //Hours flipview
     self.flipView = [[FlipView alloc] initWithAnimationType:kAnimationFlipVertical
-                                                      frame:CGRectMake(20, 270, 90, 200)];
+                                                      frame:CGRectMake(marginSpace+5, 200, 90, 200)];
     //self.flipView.layer.borderWidth=1;
     //self.flipView.layer.borderColor = [UIColor colorWithRed:0.88 green:0.42 blue:0.06 alpha:1].CGColor;
     
@@ -182,9 +182,9 @@
     animationDelegate2.controller = self;
     animationDelegate2.perspectiveDepth = 2000;
     
-    
+    //minutes flipview
     self.flipView2 = [[FlipView alloc] initWithAnimationType:kAnimationFlipVertical
-                                                       frame:CGRectMake(120, 275, 190, 190)];
+                                                       frame:CGRectMake([[UIScreen mainScreen] bounds].size.width-marginSpace-190, 205, 190, 190)];
     //self.flipView.layer.borderWidth=1;
     //self.flipView.layer.borderColor = [UIColor colorWithRed:0.88 green:0.42 blue:0.06 alpha:1].CGColor;
     
@@ -215,7 +215,9 @@
     //self.flipView.sublayerCornerRadius = 10;
     [self.flipView2 printText:@" " usingImage:[UIImage imageNamed:@"flipmin0"] backgroundColor:[UIColor clearColor] textColor:[UIColor whiteColor]];
     
-    self.panRegion = [[UIView alloc] initWithFrame:CGRectMake(20, 270, 90, 200)];
+    
+    //Same as hours flipview size and coordinates
+    self.panRegion = [[UIView alloc] initWithFrame:CGRectMake(marginSpace+5, 270, 90, 200)];
     [self.view addSubview:self.panRegion];
     
     self.panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panned:)];
@@ -224,8 +226,8 @@
     self.panRecognizer.minimumNumberOfTouches = 1;
     [self.panRegion addGestureRecognizer:self.panRecognizer];
     
-    
-    self.panRegion2 = [[UIView alloc] initWithFrame:CGRectMake(120, 275, 190, 190)];
+    //Same as minutes flipview size and coordinates
+    self.panRegion2 = [[UIView alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width-marginSpace-190, 275, 190, 190)];
     [self.view addSubview:self.panRegion2];
     
     self.panRecognizer2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panned2:)];
