@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *pickUpBtn;
 @property (weak, nonatomic) IBOutlet UIButton *deliveryBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nowBtn;
+@property (weak, nonatomic) IBOutlet UIButton *laterBtn;
 
 @property (copy, nonatomic) MKPlacemark *destination;
 @property (nonatomic, strong) NSMutableArray *annotations;

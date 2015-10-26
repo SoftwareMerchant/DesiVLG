@@ -684,7 +684,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q2-QE-kEj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q2-QE-kEj">
                                 <rect key="frame" x="0.0" y="467" width="600" height="69"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.086274509803921567" green="0.21176470588235294" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
@@ -736,7 +736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZh-Yr-oEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="564" y="-1673"/>
+            <point key="canvasLocation" x="540" y="-1829"/>
         </scene>
         <!--Order Options-->
         <scene sceneID="fV7-iv-a2B">
@@ -813,10 +813,13 @@
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.8862745098" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="NOW">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapNow:" destination="ePW-b1-mpx" eventType="touchUpInside" id="eSg-DD-cuD"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Get Your Meal ASAP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vz0-rW-dIO">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Get Your Meal ASAP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="vz0-rW-dIO">
                                 <rect key="frame" x="125" y="425" width="339" height="34"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.8862745098" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -824,13 +827,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwa-pF-MDf">
+                            <button alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwa-pF-MDf">
                                 <rect key="frame" x="296" y="365" width="167" height="60"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.7725490196" green="0.75686274509999996" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="LATER">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="AZM-CG-wrI" kind="show" id="dsW-iJ-qpO"/>
@@ -873,7 +876,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="deliveryBtn" destination="KfU-Ej-lsk" id="Z9B-Gc-g2M"/>
+                        <outlet property="laterBtn" destination="rwa-pF-MDf" id="bdY-ba-Nv3"/>
                         <outlet property="mapView" destination="Env-Ym-lac" id="TrK-JJ-IIP"/>
+                        <outlet property="nowBtn" destination="oW6-nZ-G75" id="RgF-3l-1hB"/>
                         <outlet property="orderTimeLabel" destination="vz0-rW-dIO" id="Iw0-iZ-HhC"/>
                         <outlet property="pickUpBtn" destination="3Cg-0i-IVK" id="f3o-24-Dnj"/>
                         <segue destination="Z9V-wz-8Bk" kind="show" identifier="showItemsMenu" id="z02-iW-7rr"/>
@@ -983,7 +988,7 @@ Sunday:	12:00 PM - 03:30 PM
         <image name="trans.png" width="895" height="164"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kLm-Oc-edM"/>
-        <segue reference="Upg-kg-9DV"/>
+        <segue reference="c12-0a-xq4"/>
+        <segue reference="xa1-yH-gUh"/>
     </inferredMetricsTieBreakers>
 </document>

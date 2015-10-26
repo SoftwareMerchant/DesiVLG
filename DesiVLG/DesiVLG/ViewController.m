@@ -36,12 +36,29 @@
     [self location];
     
     if(!(self.currentOrderDateTime == nil)) {
-        NSString *labelText = [NSString stringWithFormat:@"Get your order on %@, %@ @ %d:%d %@", self.currentOrderDateTime.selectedDay,self.currentOrderDateTime.selectedWeekDay,self.currentOrderDateTime.hours,self.currentOrderDateTime.minutes,self.currentOrderDateTime.amPM];
+        NSString *labelText = [NSString stringWithFormat:@"On %@, %@ @ %d:%d %@", self.currentOrderDateTime.selectedDay,self.currentOrderDateTime.selectedWeekDay,self.currentOrderDateTime.hours,self.currentOrderDateTime.minutes,self.currentOrderDateTime.amPM];
         NSLog(@"Object present");
+        AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+        delegate.myOrderOptions.time = self.currentOrderDateTime;
         self.orderTimeLabel.text = labelText;
+        self.nowBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
+        self.nowBtn.backgroundColor = [UIColor lightGrayColor];
+        [self.nowBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        self.laterBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:35.0];
+        self.laterBtn.backgroundColor = self.orderTimeLabel.backgroundColor;
+        [self.laterBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+        self.nowBtn.enabled = YES;
     } else {
         NSLog(@"Object not present");
         self.orderTimeLabel.text = @"Get Your Meal ASAP";
+
+        self.laterBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
+        self.laterBtn.backgroundColor = [UIColor lightGrayColor];
+        [self.laterBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        self.nowBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:35.0];
+        self.nowBtn.backgroundColor = self.orderTimeLabel.backgroundColor;
+        [self.nowBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+        self.nowBtn.enabled = NO;
     }
     
 }
@@ -65,6 +82,7 @@
     }
     self.delivery = !self.delivery;
 }
+
 - (IBAction)tapDelivery:(id)sender {
     if(!self.delivery){
         self.deliveryBtn.backgroundColor = self.pickUpBtn.backgroundColor;
@@ -79,6 +97,21 @@
         self.pickUpBtn.enabled = YES;
     }
     self.delivery = !self.delivery;
+}
+
+- (IBAction)tapNow:(id)sender {
+    self.orderTimeLabel.text = @"Get Your Meal ASAP";
+    
+    self.laterBtn.backgroundColor = [UIColor lightGrayColor];
+    [self.laterBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    self.nowBtn.backgroundColor = self.orderTimeLabel.backgroundColor;
+    [self.nowBtn setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    self.nowBtn.enabled = NO;
+    self.nowBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:35.0];
+    self.laterBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
+    self.currentOrderDateTime = nil;
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    delegate.myOrderOptions.time = nil;
 }
 
 -(void)location{
@@ -131,7 +164,6 @@
     [self.mapView setRegion:region animated:YES];
     [self.mapView addAnnotation:annotation];
     [self.mapView selectAnnotation:annotation animated:YES];
-    
     
 }
 
