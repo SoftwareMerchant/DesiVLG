@@ -63,6 +63,8 @@
     if(curQuan == 1){
         self.downBtn.enabled = YES;
         self.itemPriceLabel.alpha = 1;
+        self.itemNameLabel.alpha = 1;
+        self.itemNoteField.alpha = 1;
     }
     
 }
@@ -77,6 +79,8 @@
     if(curQuan == 0){
         self.downBtn.enabled = NO;
         self.itemPriceLabel.alpha = 0.4;
+        self.itemNameLabel.alpha = 0.4;
+        self.itemNoteField.alpha = 0.4;
     }
 }
 

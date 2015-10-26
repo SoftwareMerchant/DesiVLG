@@ -23,11 +23,13 @@
     self.title = @"Your Order";
     self.taxRate = 0.06;//PA tax
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clearCart)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
     NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
     [self.dbManager executeQuery:createSQL];
     [self loadData];
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clearCart)];
-    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +58,15 @@
     self.totalLabel.text =
     [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate + self.totalPrice];
     
+    if(self.totalPrice == 0){
+        self.checkOutBtn.enabled = NO;
+        self.checkOutBtn.alpha = 0.8;
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }else{
+        self.checkOutBtn.enabled = YES;
+        self.checkOutBtn.alpha = 1;
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
 }
 
 -(void)clearCart{
@@ -129,6 +140,13 @@
     if([cell.quantityLabel.text isEqualToString:@"0"]){
         cell.downBtn.enabled = NO;
         cell.itemPriceLabel.alpha = 0.4;
+        cell.itemNameLabel.alpha = 0.4;
+        cell.itemNoteField.alpha = 0.4;
+    }else{
+        cell.downBtn.enabled = YES;
+        cell.itemPriceLabel.alpha = 1;
+        cell.itemNameLabel.alpha = 1;
+        cell.itemNoteField.alpha = 1;
     }
     cell.itemNameLabel.text = [NSString stringWithFormat:@"%@($%.2f)", cell.name,cell.unitPrice];
     cell.itemNoteField.text = [NSString stringWithFormat:@"Note: %@", cell.note];

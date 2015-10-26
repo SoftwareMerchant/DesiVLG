@@ -13,6 +13,8 @@
 @property (strong, nonatomic) NSDecimalNumber *itemPrice;
 @property (nonatomic) int itemQuantity;
 
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *itemLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *q1Btn;

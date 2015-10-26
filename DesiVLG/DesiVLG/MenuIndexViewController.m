@@ -449,12 +449,17 @@
     [headerLabel setFont:[UIFont fontWithName:@"Menlo-Bold" size:18.0]];
     [view addSubview:headerLabel];
     
+    UILabel *quanLabel = [[UILabel alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - 50, 10, 40 , 40)];
+    quanLabel.text = [NSString stringWithFormat:@"%lu",[[self.MenuCategory[section] objectForKey:@"items"] count]];
+    quanLabel.textAlignment = NSTextAlignmentCenter;
+    quanLabel.layer.masksToBounds = YES;
+    quanLabel.layer.cornerRadius = 20;
+    quanLabel.backgroundColor = [UIColor orangeColor];
+    [view addSubview:quanLabel];
+    
     UIButton * myButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    myButton.layer.masksToBounds = YES;
-    myButton.layer.cornerRadius = 20;
-    [myButton setTitle:[NSString stringWithFormat:@"%lu",[[self.MenuCategory[section] objectForKey:@"items"] count]] forState:UIControlStateNormal];
-    myButton.frame = CGRectMake([[UIScreen mainScreen] bounds].size.width - 50, 10, 40 , 40);
-    myButton.backgroundColor = [UIColor orangeColor];
+    myButton.frame = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width , 60);
+    myButton.alpha = 0.1;
     myButton.tag = 100 + section;
     [myButton addTarget:self action:@selector(tapHeader:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:myButton];

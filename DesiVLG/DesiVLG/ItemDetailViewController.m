@@ -63,6 +63,7 @@
 -(void)processTap{
 //  [self.quantityInput resignFirstResponder];
     [self.noteTextView resignFirstResponder];
+    self.tipLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,11 +134,13 @@
         // If the query was successfully executed then pop the view controller.
         if (self.dbManager.affectedRows != 0) {
             NSLog(@"Update query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Cong" message:@"You'v added the item(s) successfully!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-            [alert show];
+//            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Cong" message:@"You'v added the item(s) successfully!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+//            [alert show];
+            self.tipLabel.text = @"You'v added the item(s) successfully!";
         }
         else{
             NSLog(@"Could not execute the query.");
+            self.tipLabel.text = @"Could not add the item(s).";
         }
 
     }
@@ -145,18 +148,19 @@
         NSLog(@"New Item!");
 //        self.itemQuantity = [self.quantityInput.text intValue];
         NSString *insertQuery = [NSString stringWithFormat: @"insert into CART values(NULL,'%@', %d, %f, '%@')", self.itemName,self.itemQuantity , [self.itemPrice floatValue],[self getNote]];
-        NSLog(insertQuery);
         // Execute the query.
         [self.dbManager executeQuery:insertQuery];
         
         // If the query was successfully executed then pop the view controller.
         if (self.dbManager.affectedRows != 0) {
             NSLog(@"AddToCart query was executed successfully. Affected rows = %d", self.dbManager.affectedRows);
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Cong" message:@"You'v added the item(s) successfully!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-            [alert show];
+//            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Cong" message:@"You'v added the item(s) successfully!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+//            [alert show];
+            self.tipLabel.text = @"You'v added the item(s) successfully!";
         }
         else{
             NSLog(@"Could not execute the query.");
+            self.tipLabel.text = @"Could not add the item(s).";
         }
     }
     

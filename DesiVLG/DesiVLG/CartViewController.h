@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *subtotalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UIButton *checkOutBtn;
 @property (nonatomic, strong) DBManager *dbManager;
 
 @property (nonatomic, strong) NSArray *itemArray;

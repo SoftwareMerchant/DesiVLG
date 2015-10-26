@@ -308,7 +308,7 @@
 {
     //NSLog(@"Gesture for minutes");
     self.isHoursFlip = NO;
-
+    
     switch (recognizer2.state) {
         case UIGestureRecognizerStatePossible:
             break;
@@ -424,7 +424,7 @@
         default:break;
     }
     
-   
+    
 }
 
 
@@ -508,7 +508,7 @@
 }
 - (IBAction)confirmPressed:(id)sender {
     
-     NSLog(@"%d %d %@ %@ %@",self.hoursCounter,self.minutesCounter,self.selectedDay,self.selectedWeekDay,self.amOrPMString);
+    NSLog(@"%d %d %@ %@ %@",self.hoursCounter,self.minutesCounter,self.selectedDay,self.selectedWeekDay,self.amOrPMString);
     
     [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];
     
@@ -517,24 +517,24 @@
 }
 
 
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     
-     ViewController *segueToViewController = [segue destinationViewController];
-     self.currentOrderDateTimeObject = [[DateTime alloc]init];
-     self.currentOrderDateTimeObject.selectedDay = self.selectedDay;
-     self.currentOrderDateTimeObject.selectedWeekDay = self.selectedWeekDay;
-     self.currentOrderDateTimeObject.hours = self.hoursCounter;
-     self.currentOrderDateTimeObject.minutes = self.minutesCounter;
-     self.currentOrderDateTimeObject.amPM = self.amOrPMString;
+#pragma mark - Navigation
 
-     [segueToViewController setCurrentOrderDateTime:self.currentOrderDateTimeObject];
-     
-     NSLog(@"%@", self.currentOrderDateTimeObject);
- 
- }
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    ViewController *segueToViewController = [segue destinationViewController];
+    self.currentOrderDateTimeObject = [[DateTime alloc]init];
+    self.currentOrderDateTimeObject.selectedDay = self.selectedDay;
+    self.currentOrderDateTimeObject.selectedWeekDay = self.selectedWeekDay;
+    self.currentOrderDateTimeObject.hours = self.hoursCounter;
+    self.currentOrderDateTimeObject.minutes = self.minutesCounter;
+    self.currentOrderDateTimeObject.amPM = self.amOrPMString;
+    
+    [segueToViewController setCurrentOrderDateTime:self.currentOrderDateTimeObject];
+    
+    NSLog(@"%@", self.currentOrderDateTimeObject);
+    
+}
 
 
 

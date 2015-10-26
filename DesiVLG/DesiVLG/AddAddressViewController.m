@@ -19,6 +19,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.doneBtn.enabled = NO;
+    
+    UITapGestureRecognizer * tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(processTap)];
+    [self.view addGestureRecognizer:tapGesturRecognizer];
+}
+
+-(void)processTap{
+    //  [self.quantityInput resignFirstResponder];
+    [self.addressField resignFirstResponder];
+    [self.cityField resignFirstResponder];
+    [self.noteField resignFirstResponder];
+    [self.zipField resignFirstResponder];
+    [self.stateField resignFirstResponder];
+    
+    if([self.addressField.text isEqual:@""] || [self.cityField.text isEqual:@""] || [self.stateField.text isEqual:@""] || [self.zipField.text isEqual:@""]){
+        self.doneBtn.enabled = NO;
+        self.doneBtn.alpha = 0.65;
+    }else{
+        self.doneBtn.enabled = YES;
+        self.doneBtn.alpha = 1;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
