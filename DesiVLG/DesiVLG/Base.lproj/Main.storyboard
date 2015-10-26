@@ -394,18 +394,18 @@
                                                         <constraint firstAttribute="height" constant="30" id="WkN-UW-oFA"/>
                                                         <constraint firstAttribute="width" constant="30" id="qn6-pc-dKP"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                                     <color key="textColor" red="0.80784313730000001" green="0.47058823529999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQI-Yy-hYE">
-                                                    <rect key="frame" x="26" y="18" width="25" height="23"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQI-Yy-hYE">
+                                                    <rect key="frame" x="22" y="10" width="31" height="34"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="vWg-sN-uuD"/>
                                                         <constraint firstAttribute="width" constant="20" id="wAD-2p-xUg"/>
                                                     </constraints>
-                                                    <state key="normal" title="🔼"/>
+                                                    <state key="normal" image="plus_alt.png"/>
                                                     <connections>
                                                         <action selector="tapUpBtn:" destination="PiY-U8-tzP" eventType="touchUpInside" id="2bt-sa-5AO"/>
                                                     </connections>
@@ -438,14 +438,14 @@
                                                     <color key="textColor" red="0.086274509799999996" green="0.21176470589999999" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wY-G9-IgQ">
-                                                    <rect key="frame" x="26" y="78" width="25" height="24"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wY-G9-IgQ">
+                                                    <rect key="frame" x="22" y="74" width="32" height="32.5"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="JB6-Fs-O59"/>
                                                         <constraint firstAttribute="width" constant="20" id="yeu-Nn-U3T"/>
                                                     </constraints>
-                                                    <state key="normal" title="🔽"/>
+                                                    <state key="normal" image="minus_alt.png"/>
                                                     <connections>
                                                         <action selector="tapDownBtn:" destination="PiY-U8-tzP" eventType="touchUpInside" id="OEi-sL-140"/>
                                                     </connections>
@@ -960,7 +960,9 @@ Sunday:	12:00 PM - 03:30 PM
         <image name="Checkmark.png" width="30" height="30"/>
         <image name="ScreenLaunch.png" width="500" height="903"/>
         <image name="applePay.png" width="166" height="114"/>
+        <image name="minus_alt.png" width="32" height="32"/>
         <image name="orange.png" width="897" height="166"/>
+        <image name="plus_alt.png" width="32" height="32"/>
         <image name="restaurant.png" width="250" height="248"/>
         <image name="trans.png" width="895" height="164"/>
     </resources>
