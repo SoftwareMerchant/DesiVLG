@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Address.h"
+#import "DateTime.h"
 
 @interface OrderOptions : NSObject
 @property (nonatomic) Address* destination;
-@property (nonatomic) NSDate* date;
+@property (nonatomic) DateTime* time;
 @end

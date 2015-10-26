@@ -213,8 +213,6 @@
 				6B69B0C41BC425BA002F6BF6 /* Main.storyboard */,
 				6B69B0BE1BC425BA002F6BF6 /* AppDelegate.h */,
 				6B69B0BF1BC425BA002F6BF6 /* AppDelegate.m */,
-				7D0ED64C1BD9F76B0049852D /* DateTime.h */,
-				7D0ED64D1BD9F76B0049852D /* DateTime.m */,
 				6B8DE6D11BCFFA1D0090BC19 /* Model */,
 				6B69B0C11BC425BA002F6BF6 /* ViewController.h */,
 				6B69B0C21BC425BA002F6BF6 /* ViewController.m */,
@@ -307,6 +305,8 @@
 		6B8DE6D11BCFFA1D0090BC19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7D0ED64C1BD9F76B0049852D /* DateTime.h */,
+				7D0ED64D1BD9F76B0049852D /* DateTime.m */,
 				6B8DE6D21BCFFA490090BC19 /* OrderOptions.h */,
 				6B8DE6D31BCFFA490090BC19 /* OrderOptions.m */,
 				6B8DE6D51BCFFAEB0090BC19 /* Address.h */,

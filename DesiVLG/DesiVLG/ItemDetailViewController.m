@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Dish Details";
+    self.tipLabel.text = @"";
     self.itemLabel.text = [NSString stringWithFormat:@"%@",self.itemName];
     UIImage *img = [UIImage imageNamed:@"priceTag.png"];
     CGSize imgSize = self.priceLabel.frame.size;
@@ -56,11 +57,18 @@
     NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
     [self.dbManager executeQuery:createSQL];
     
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"Shopping-Cart.png"] style:UIBarButtonItemStyleDone target:self action:@selector(viewCart)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
     UITapGestureRecognizer * tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(processTap)];
     [self.view addGestureRecognizer:tapGesturRecognizer];
 }
 
--(void)processTap{
+- (void)viewCart{
+    [self performSegueWithIdentifier:@"viewCart" sender:nil];
+}
+
+- (void)processTap{
 //  [self.quantityInput resignFirstResponder];
     [self.noteTextView resignFirstResponder];
     self.tipLabel.text = @"";
