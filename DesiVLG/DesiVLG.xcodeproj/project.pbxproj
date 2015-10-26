@@ -43,11 +43,7 @@
 		6B9690D31BCC2DBE001216A4 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9690D21BCC2DBE001216A4 /* DBManager.m */; };
 		6BADEB541BD150020047CAF1 /* priceTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BADEB531BD150020047CAF1 /* priceTag.png */; };
 		6BF6E5631BD7EF31006641F4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF6E5621BD7EF31006641F4 /* MessageUI.framework */; };
-<<<<<<< Updated upstream
 		7D0ED64E1BD9F76B0049852D /* DateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0ED64D1BD9F76B0049852D /* DateTime.m */; };
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
 		7DEAA8131BD9A6780085693B /* AnimationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAA80C1BD9A6780085693B /* AnimationDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7DEAA8141BD9A6780085693B /* AnimationFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAA80E1BD9A6780085693B /* AnimationFrame.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7DEAA8151BD9A6780085693B /* FlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAA8101BD9A6780085693B /* FlipView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -56,10 +52,6 @@
 		7DEAA81E1BD9A6840085693B /* MZDayPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAA81A1BD9A6840085693B /* MZDayPicker.m */; };
 		7DEAA81F1BD9A6840085693B /* MZDayPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAA81C1BD9A6840085693B /* MZDayPickerCell.m */; };
 		7DEAA8221BD9A6950085693B /* DateAndTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEAA8211BD9A6950085693B /* DateAndTimeViewController.m */; };
-=======
-		6BFBB4121BD933A40097EFBB /* minus_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFBB4101BD933A40097EFBB /* minus_alt.png */; settings = {ASSET_TAGS = (); }; };
-		6BFBB4131BD933A40097EFBB /* plus_alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFBB4111BD933A40097EFBB /* plus_alt.png */; settings = {ASSET_TAGS = (); }; };
->>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,12 +129,8 @@
 		6BADEB531BD150020047CAF1 /* priceTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priceTag.png; sourceTree = "<group>"; };
 		6BF6E5621BD7EF31006641F4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6BF6E5641BD81243006641F4 /* DesiVLG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DesiVLG.entitlements; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
 		7D0ED64C1BD9F76B0049852D /* DateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTime.h; sourceTree = "<group>"; };
 		7D0ED64D1BD9F76B0049852D /* DateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTime.m; sourceTree = "<group>"; };
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
 		7DEAA80B1BD9A6780085693B /* AnimationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationDelegate.h; sourceTree = "<group>"; };
 		7DEAA80C1BD9A6780085693B /* AnimationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationDelegate.m; sourceTree = "<group>"; };
 		7DEAA80D1BD9A6780085693B /* AnimationFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationFrame.h; sourceTree = "<group>"; };
@@ -159,10 +147,6 @@
 		7DEAA81C1BD9A6840085693B /* MZDayPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZDayPickerCell.m; sourceTree = "<group>"; };
 		7DEAA8201BD9A6950085693B /* DateAndTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateAndTimeViewController.h; sourceTree = "<group>"; };
 		7DEAA8211BD9A6950085693B /* DateAndTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateAndTimeViewController.m; sourceTree = "<group>"; };
-=======
-		6BFBB4101BD933A40097EFBB /* minus_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus_alt.png; sourceTree = "<group>"; };
-		6BFBB4111BD933A40097EFBB /* plus_alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_alt.png; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +246,6 @@
 		6B69B0BB1BC425BA002F6BF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< Updated upstream
 				7DEAA80B1BD9A6780085693B /* AnimationDelegate.h */,
 				7DEAA80C1BD9A6780085693B /* AnimationDelegate.m */,
 				7DEAA80D1BD9A6780085693B /* AnimationFrame.h */,
@@ -277,10 +260,6 @@
 				7DEAA81A1BD9A6840085693B /* MZDayPicker.m */,
 				7DEAA81B1BD9A6840085693B /* MZDayPickerCell.h */,
 				7DEAA81C1BD9A6840085693B /* MZDayPickerCell.m */,
-=======
-				6BFBB4101BD933A40097EFBB /* minus_alt.png */,
-				6BFBB4111BD933A40097EFBB /* plus_alt.png */,
->>>>>>> Stashed changes
 				6B1C7B2F1BD6D12900B8AF22 /* applePay.png */,
 				6BADEB531BD150020047CAF1 /* priceTag.png */,
 				6B6592C11BCEEC7000DFC5F5 /* trans.png */,
@@ -441,9 +420,7 @@
 				6B6592B71BCEB24500DFC5F5 /* ScreenLaunch.png in Resources */,
 				6B9690CC1BCC185E001216A4 /* cloth.png in Resources */,
 				6B8DE6E21BD002050090BC19 /* AddAddressViewController.xib in Resources */,
-				6BFBB4121BD933A40097EFBB /* minus_alt.png in Resources */,
 				6B9690C61BCC1120001216A4 /* logo.png in Resources */,
-				6BFBB4131BD933A40097EFBB /* plus_alt.png in Resources */,
 				6B6592BE1BCEEA4900DFC5F5 /* orange.png in Resources */,
 				6BADEB541BD150020047CAF1 /* priceTag.png in Resources */,
 				6B69B0C81BC425BA002F6BF6 /* Assets.xcassets in Resources */,
