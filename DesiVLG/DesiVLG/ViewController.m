@@ -29,7 +29,7 @@
     self.delivery = NO;
     [self.deliveryBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.pickUpBtn.enabled = NO;
-    self.deliveryBtn.enabled = YES;
+//    self.deliveryBtn.enabled = YES;
     self.annotations = [[NSMutableArray alloc] initWithCapacity:10];
     // Do any additional setup after loading the view from its nib.
     _geocoder=[[CLGeocoder alloc]init];
@@ -54,7 +54,7 @@
         [self.deliveryBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.deliveryBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:25.0];
         self.pickUpBtn.enabled = NO;
-        self.deliveryBtn.enabled = YES;
+//        self.deliveryBtn.enabled = YES;
     }
     self.delivery = !self.delivery;
 }
@@ -69,10 +69,14 @@
         self.pickUpBtn.tintColor = [UIColor darkGrayColor];
         [self.pickUpBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.pickUpBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:25.0];
-        self.deliveryBtn.enabled = NO;
+//        self.deliveryBtn.enabled = NO;
         self.pickUpBtn.enabled = YES;
+        self.delivery = !self.delivery;
+    }else{
+        AddAddressViewController *addressController = [[AddAddressViewController alloc]  initWithNibName:@"AddAddressViewController" bundle:nil];
+        addressController.delegate = self;
+        [self presentViewController:addressController animated:YES completion:nil];
     }
-    self.delivery = !self.delivery;
 }
 
 - (IBAction)tapNow:(id)sender {
