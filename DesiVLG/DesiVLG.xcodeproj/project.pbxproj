@@ -14,6 +14,7 @@
 		6B2BAC2B1BD17EA100AB4C9F /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2BAC2A1BD17EA100AB4C9F /* CartViewController.m */; };
 		6B2BAC2E1BD182CF00AB4C9F /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */; };
 		6B3854171BE00BA2004C4620 /* navi.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3854161BE00BA2004C4620 /* navi.png */; settings = {ASSET_TAGS = (); }; };
+		6B38541A1BE0168D004C4620 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3854191BE0168D004C4620 /* InfoViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6B6592B71BCEB24500DFC5F5 /* ScreenLaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592B61BCEB24500DFC5F5 /* ScreenLaunch.png */; };
 		6B6592BC1BCEE99C00DFC5F5 /* transparant.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592BB1BCEE99C00DFC5F5 /* transparant.png */; };
 		6B6592BE1BCEEA4900DFC5F5 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B6592BD1BCEEA4900DFC5F5 /* orange.png */; };
@@ -85,6 +86,8 @@
 		6B2BAC2C1BD182CF00AB4C9F /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableViewCell.h; sourceTree = "<group>"; };
 		6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableViewCell.m; sourceTree = "<group>"; };
 		6B3854161BE00BA2004C4620 /* navi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi.png; sourceTree = "<group>"; };
+		6B3854181BE0168D004C4620 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		6B3854191BE0168D004C4620 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		6B6592B61BCEB24500DFC5F5 /* ScreenLaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenLaunch.png; sourceTree = "<group>"; };
 		6B6592BB1BCEE99C00DFC5F5 /* transparant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparant.png; sourceTree = "<group>"; };
 		6B6592BD1BCEEA4900DFC5F5 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				6B69B0F51BC6BF00002F6BF6 /* MyPin.m */,
 				6B1C7B2A1BD6CFEB00B8AF22 /* ApplePayViewController.h */,
 				6B1C7B2B1BD6CFEB00B8AF22 /* ApplePayViewController.m */,
+				6B3854181BE0168D004C4620 /* InfoViewController.h */,
+				6B3854191BE0168D004C4620 /* InfoViewController.m */,
 				6B69B0C71BC425BA002F6BF6 /* Assets.xcassets */,
 				6B69B0C91BC425BA002F6BF6 /* LaunchScreen.storyboard */,
 				6B69B0CC1BC425BA002F6BF6 /* Info.plist */,
@@ -468,6 +473,7 @@
 			files = (
 				6B69B0F01BC6BDEE002F6BF6 /* MenuIndexViewController.m in Sources */,
 				6B2BAC2B1BD17EA100AB4C9F /* CartViewController.m in Sources */,
+				6B38541A1BE0168D004C4620 /* InfoViewController.m in Sources */,
 				6B8DE6D41BCFFA490090BC19 /* OrderOptions.m in Sources */,
 				7DEAA81D1BD9A6840085693B /* MZDay.m in Sources */,
 				6B69B0C31BC425BA002F6BF6 /* ViewController.m in Sources */,
