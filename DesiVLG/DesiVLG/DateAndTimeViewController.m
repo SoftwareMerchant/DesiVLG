@@ -27,7 +27,7 @@
 @property (nonatomic) BOOL isMinutesFlip;
 @property (nonatomic) BOOL isHoursFlip;
 
-
+@property (nonatomic) bool timeValid;
 
 
 - (IBAction)confirmPressed:(id)sender;
@@ -49,7 +49,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.timeValid = NO;
     //View Size calculation
     int marginSpace = ([[UIScreen mainScreen] bounds].size.width - 90 - 190)/3;
     
@@ -235,9 +235,6 @@
     self.panRecognizer2.maximumNumberOfTouches = 1;
     self.panRecognizer2.minimumNumberOfTouches = 1;
     [self.panRegion2 addGestureRecognizer:self.panRecognizer2];
-    
-    
-    
     
 }
 
@@ -503,9 +500,37 @@
     
     
 }
-- (IBAction)confirmPressed:(id)sender {
+
+//Check if your selected time within the valid range
+- (void) validTime{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm:ss a"];
+    NSString *curTimeStr = [dateFormatter stringFromDate:[NSDate date]];
+    NSString *setTime = [NSString stringWithFormat:@"%d:%d:00 %@",self.hoursCounter,self.minutesCounter,self.amOrPMString];
     
+    NSDate *date1= [dateFormatter dateFromString:curTimeStr];
+    NSDate *date2 = [dateFormatter dateFromString:setTime];
+    
+    NSComparisonResult result = [date1 compare:date2];
+    if(result == NSOrderedAscending)
+    {
+        NSLog(@"date2 is later than date1");
+        self.timeValid = YES;
+    }
+    else
+    {
+        NSLog(@"date1 is equal to date2");
+        self.timeValid = NO;
+    }
+}
+- (IBAction)confirmPressed:(id)sender {
     NSLog(@"%d %d %@ %@ %@",self.hoursCounter,self.minutesCounter,self.selectedDay,self.selectedWeekDay,self.amOrPMString);
+    [self validTime];
+    if(self.timeValid){
+        [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];
+    }else{
+        NSLog(@"Please pick a valid time!");
+    }
     
   //  [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];
     

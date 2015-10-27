@@ -751,7 +751,6 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmPressed:" destination="AZM-CG-wrI" eventType="touchUpInside" id="fkP-re-byY"/>
-                                    <segue destination="2Wg-ep-qA0" kind="unwind" unwindAction="backToMainView:" id="NlP-8U-hvK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzr-kJ-jxy">
@@ -782,6 +781,7 @@
                     <connections>
                         <outlet property="ampmButton" destination="Vzr-kJ-jxy" id="cwc-Vr-BwT"/>
                         <outlet property="dayPicker" destination="lFv-QI-q1e" id="fM2-T7-zaB"/>
+                        <segue destination="2Wg-ep-qA0" kind="unwind" identifier="ConfirmedOrderDateTimeSegue" unwindAction="backToMainView:" id="Izo-Se-Hl6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZh-Yr-oEa" userLabel="First Responder" sceneMemberID="firstResponder"/>

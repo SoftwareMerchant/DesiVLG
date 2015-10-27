@@ -173,7 +173,7 @@
     DateAndTimeViewController *dateTimeVCObject = segue.sourceViewController;
     [self setCurrentOrderDateTime:dateTimeVCObject.currentOrderDateTimeObject];
     if(!(self.currentOrderDateTime == nil)) {
-        NSString *labelText = [NSString stringWithFormat:@"On %@, %@ @ %d:%d %@", self.currentOrderDateTime.selectedDay,self.currentOrderDateTime.selectedWeekDay,self.currentOrderDateTime.hours,self.currentOrderDateTime.minutes,self.currentOrderDateTime.amPM];
+        NSString *labelText = [NSString stringWithFormat:@"On %@, %@ @ %02d:%02d %@", self.currentOrderDateTime.selectedDay,self.currentOrderDateTime.selectedWeekDay,self.currentOrderDateTime.hours,self.currentOrderDateTime.minutes,self.currentOrderDateTime.amPM];
         NSLog(@"Object present");
         AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
         delegate.myOrderOptions.time = self.currentOrderDateTime;
