@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     self.MenuCategory = [[NSMutableArray alloc] init];
     self.expSection = [[NSMutableDictionary alloc] init];
     //Form the detail menu

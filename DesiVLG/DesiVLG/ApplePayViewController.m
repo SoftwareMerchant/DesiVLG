@@ -166,7 +166,7 @@
     formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     dateString = [formatter stringFromDate:[NSDate date]];
-    [content appendFormat:@"Current Date:%@\n-------------------------\n",dateString];
+    [content appendFormat:@"\nCurrent Date:%@\n-------------------------\n",dateString];
     if(options.time != nil){
         [content appendFormat:@"Want it on %@, %@ @ %d:%d %@", options.time.selectedDay,options.time.selectedWeekDay,options.time.hours,options.time.minutes,options.time.amPM];
     }else{

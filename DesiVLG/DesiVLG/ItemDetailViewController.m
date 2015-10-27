@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     self.title = @"Dish Details";
     self.tipLabel.text = @"";
     self.itemLabel.text = [NSString stringWithFormat:@"%@",self.itemName];

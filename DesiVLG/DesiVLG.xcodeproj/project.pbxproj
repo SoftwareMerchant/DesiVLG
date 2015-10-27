@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B1C7B291BD6CE3000B8AF22 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7B281BD6CE3000B8AF22 /* PaymentViewController.m */; };
 		6B1C7B2C1BD6CFEB00B8AF22 /* ApplePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1C7B2B1BD6CFEB00B8AF22 /* ApplePayViewController.m */; };
 		6B1C7B2E1BD6D00B00B8AF22 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1C7B2D1BD6D00B00B8AF22 /* PassKit.framework */; };
 		6B1C7B301BD6D12900B8AF22 /* applePay.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B1C7B2F1BD6D12900B8AF22 /* applePay.png */; };
@@ -75,8 +74,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B1C7B271BD6CE3000B8AF22 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
-		6B1C7B281BD6CE3000B8AF22 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
 		6B1C7B2A1BD6CFEB00B8AF22 /* ApplePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePayViewController.h; sourceTree = "<group>"; };
 		6B1C7B2B1BD6CFEB00B8AF22 /* ApplePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplePayViewController.m; sourceTree = "<group>"; };
 		6B1C7B2D1BD6D00B00B8AF22 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
@@ -233,8 +230,6 @@
 				6B2BAC2D1BD182CF00AB4C9F /* OrderTableViewCell.m */,
 				6B69B0F41BC6BF00002F6BF6 /* MyPin.h */,
 				6B69B0F51BC6BF00002F6BF6 /* MyPin.m */,
-				6B1C7B271BD6CE3000B8AF22 /* PaymentViewController.h */,
-				6B1C7B281BD6CE3000B8AF22 /* PaymentViewController.m */,
 				6B1C7B2A1BD6CFEB00B8AF22 /* ApplePayViewController.h */,
 				6B1C7B2B1BD6CFEB00B8AF22 /* ApplePayViewController.m */,
 				6B69B0C71BC425BA002F6BF6 /* Assets.xcassets */,
@@ -471,7 +466,6 @@
 				6B2BAC2B1BD17EA100AB4C9F /* CartViewController.m in Sources */,
 				6B8DE6D41BCFFA490090BC19 /* OrderOptions.m in Sources */,
 				7DEAA81D1BD9A6840085693B /* MZDay.m in Sources */,
-				6B1C7B291BD6CE3000B8AF22 /* PaymentViewController.m in Sources */,
 				6B69B0C31BC425BA002F6BF6 /* ViewController.m in Sources */,
 				7DEAA81E1BD9A6840085693B /* MZDayPicker.m in Sources */,
 				7DEAA8221BD9A6950085693B /* DateAndTimeViewController.m in Sources */,

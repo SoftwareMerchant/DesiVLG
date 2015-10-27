@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     self.title = @"Your Order";
     self.taxRate = 0.06;//PA tax
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
