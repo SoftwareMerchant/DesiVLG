@@ -17,13 +17,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.01</string>
+	<string>1.02</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Please allow the app always get access to your current location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This application requires Location Services to work!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -38,9 +42,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This application requires Location Services to work!</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Please allow the app always get access to your current location</string>
 </dict>
 </plist>
