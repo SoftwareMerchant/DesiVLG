@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 @protocol AddressDelegate;
 
 @interface AddAddressViewController : UIViewController
@@ -18,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *doneBtn;
 
 @property (nonatomic, weak) id<AddressDelegate> delegate;
-
+@property (copy, nonatomic) MKPlacemark *restaurant;
 @end
 
 @protocol AddressDelegate <NSObject>

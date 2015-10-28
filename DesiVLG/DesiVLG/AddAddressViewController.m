@@ -10,7 +10,8 @@
 #import "AppDelegate.h"
 
 @interface AddAddressViewController ()
-
+@property (nonatomic,strong) CLGeocoder *geocoder;
+@property (copy, nonatomic) MKPlacemark *destination;
 @end
 
 @implementation AddAddressViewController
@@ -22,6 +23,37 @@
     
     UITapGestureRecognizer * tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(processTap)];
     [self.view addGestureRecognizer:tapGesturRecognizer];
+    
+    _geocoder=[[CLGeocoder alloc]init];
+    
+}
+
+-(void)location{
+    //form the address string
+    NSString *addStr = [NSString stringWithFormat:@"%@, %@, %@ %@",self.addressField.text,self.cityField.text,self.stateField.text, self.zipField.text];
+    //code the address
+    [_geocoder geocodeAddressString:addStr completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *clPlacemark=[placemarks firstObject];
+        MKPlacemark *mkplacemark=[[MKPlacemark alloc]initWithPlacemark:clPlacemark];
+        self.destination = mkplacemark;
+        if(error == nil && [self validAddress]){
+            [self saveAddress];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.delegate addAddressSuccess];
+        }else{
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning"
+                                                                                     message:@"The address is invalid or out of our delivery range, please try again!"
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
+            //We add buttons to the alert controller by creating UIAlertActions:
+            UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:nil];
+            [alertController addAction:actionCancel];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+
+    }];
+    
 }
 
 -(void)processTap{
@@ -58,8 +90,14 @@
 }
 
 - (Boolean)validAddress{
-    //NOT FINISHED: Set up valid range
-    return YES;
+    if(self.destination != nil){
+        if([self.destination.location distanceFromLocation:self.restaurant.location] < 2414.0){
+            //within 1.5mile
+            return YES;
+        }
+    }
+    NSLog(@"Delivery address out of range!!!");
+    return NO;
 }
 - (void)saveAddress{
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
@@ -81,21 +119,6 @@
 }
 
 - (IBAction)tapDone:(id)sender {
-    if([self validAddress]){
-        [self saveAddress];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        [self.delegate addAddressSuccess];
-    }else{
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning"
-                                                                                 message:@"The address is out of our delivery range, please try again!"
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        //We add buttons to the alert controller by creating UIAlertActions:
-        UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel"
-                                                               style:UIAlertActionStyleDefault
-                                                             handler:nil];
-        [alertController addAction:actionCancel];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
-    
+    [self location];
 }
 @end

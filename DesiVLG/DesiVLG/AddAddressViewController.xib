@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                     <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-On-Q5Z">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pJt-On-Q5Z">
                     <rect key="frame" x="92" y="106" width="486" height="45"/>
                     <animations/>
                     <constraints>
@@ -44,7 +44,7 @@
                         <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="YU0-v2-3RE"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Delivery Notes(Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfX-CC-5Ix">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Delivery Notes(Optional)" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GfX-CC-5Ix">
                     <rect key="frame" x="92" y="175" width="486" height="45"/>
                     <animations/>
                     <constraints>
@@ -56,7 +56,7 @@
                         <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="3kf-1f-BYx"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City/Town" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-7R-Nhw">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City/Town" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bau-7R-Nhw">
                     <rect key="frame" x="92" y="244" width="248" height="45"/>
                     <animations/>
                     <constraints>
@@ -74,7 +74,7 @@
                         <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="bRH-qU-5hA"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-94-x2A">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-94-x2A">
                     <rect key="frame" x="390" y="244" width="188" height="45"/>
                     <animations/>
                     <constraints>
@@ -87,7 +87,7 @@
                         <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="NcI-tz-64X"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mar-z7-epB">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mar-z7-epB">
                     <rect key="frame" x="92" y="315" width="486" height="45"/>
                     <animations/>
                     <constraints>

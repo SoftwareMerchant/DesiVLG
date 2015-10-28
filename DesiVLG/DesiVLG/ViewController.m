@@ -88,6 +88,7 @@
     }else{
         AddAddressViewController *addressController = [[AddAddressViewController alloc]  initWithNibName:@"AddAddressViewController" bundle:nil];
         addressController.delegate = self;
+        addressController.restaurant = self.destination;
         [self presentViewController:addressController animated:YES completion:nil];
     }
 }
@@ -258,6 +259,7 @@
     if(self.delivery && delegate.myOrderOptions.destination == nil){
         AddAddressViewController *addressController = [[AddAddressViewController alloc]  initWithNibName:@"AddAddressViewController" bundle:nil];
         addressController.delegate = self;
+        addressController.restaurant = self.destination;
         [self presentViewController:addressController animated:YES completion:nil];
     }else{
         [self performSegueWithIdentifier:@"showItemsMenu" sender:self];
