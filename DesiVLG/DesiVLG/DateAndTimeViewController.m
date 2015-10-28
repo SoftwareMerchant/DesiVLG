@@ -504,12 +504,24 @@
 
 //Check if your selected time within the valid range
 - (void) validTime{
+    //Not completed
+    //Only implemented the check for future time
+    //Problem: The Month is not clear for the picked date...
+//    NSString *monthStr = [NSString]
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"hh:mm:ss a"];
-    NSString *curTimeStr = [dateFormatter stringFromDate:[NSDate date]];
-    NSString *setTime = [NSString stringWithFormat:@"%d:%d:00 %@",self.hoursCounter,self.minutesCounter,self.amOrPMString];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+    NSDate *date1= [NSDate date];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:date1];
+    int today = [components day];
+    int selectDay = [self.selectedDay intValue];
+    if(selectDay  < today){
+        //Next month date
+        NSLog(@"Next Month date: date2 is later than date1");
+        self.timeValid = YES;
+        return;
+    }
+    NSString *setTime = [NSString stringWithFormat:@"%@-%@ %d:%d:00 %@",[[dateFormatter stringFromDate:date1] substringToIndex:7], self.selectedDay, self.hoursCounter,self.minutesCounter,self.amOrPMString];
     
-    NSDate *date1= [dateFormatter dateFromString:curTimeStr];
     NSDate *date2 = [dateFormatter dateFromString:setTime];
     
     NSComparisonResult result = [date1 compare:date2];
