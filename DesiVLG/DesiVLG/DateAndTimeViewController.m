@@ -217,7 +217,7 @@
     
     
     //Same as hours flipview size and coordinates
-    self.panRegion = [[UIView alloc] initWithFrame:CGRectMake(marginSpace+5, 270, 90, 200)];
+    self.panRegion = [[UIView alloc] initWithFrame:CGRectMake(marginSpace+5, 200, 90, 200)];
     [self.view addSubview:self.panRegion];
     
     self.panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panned:)];
@@ -227,7 +227,7 @@
     [self.panRegion addGestureRecognizer:self.panRecognizer];
     
     //Same as minutes flipview size and coordinates
-    self.panRegion2 = [[UIView alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width-marginSpace-190, 275, 190, 190)];
+    self.panRegion2 = [[UIView alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width-marginSpace-190, 205, 190, 190)];
     [self.view addSubview:self.panRegion2];
     
     self.panRecognizer2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panned2:)];
