@@ -730,12 +730,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/AddAddressViewController.m"
-            timestampString = "467742616.003481"
+            timestampString = "467756625.218408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-validAddress"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesiVLG/AddAddressViewController.m"
+            timestampString = "467756597.343481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-location"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
