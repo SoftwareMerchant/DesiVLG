@@ -764,16 +764,30 @@
                                     <action selector="ampmChange:" destination="AZM-CG-wrI" eventType="touchUpInside" id="ttO-YF-rcx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B39-qk-b3E">
+                                <rect key="frame" x="0.0" y="440" width="600" height="26"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.8862745098" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Sd0-ZS-wKl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <color key="textColor" red="0.61960784310000006" green="0.2470588235" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lFv-QI-q1e" firstAttribute="top" secondItem="Be4-1A-6h5" secondAttribute="bottom" id="45R-JQ-siq"/>
+                            <constraint firstItem="2q2-QE-kEj" firstAttribute="top" secondItem="B39-qk-b3E" secondAttribute="bottom" id="LKZ-R8-Yrw"/>
                             <constraint firstItem="2q2-QE-kEj" firstAttribute="bottom" secondItem="s8A-zC-EqL" secondAttribute="top" id="O33-X6-Zmm"/>
                             <constraint firstItem="Vzr-kJ-jxy" firstAttribute="top" secondItem="lFv-QI-q1e" secondAttribute="bottom" constant="8" id="QcS-DT-vBy"/>
                             <constraint firstAttribute="trailing" secondItem="Vzr-kJ-jxy" secondAttribute="trailing" constant="8" id="SjW-sV-YCg"/>
                             <constraint firstItem="lFv-QI-q1e" firstAttribute="trailing" secondItem="2q2-QE-kEj" secondAttribute="trailing" id="ZIJ-g3-pcq"/>
                             <constraint firstItem="2q2-QE-kEj" firstAttribute="leading" secondItem="lFv-QI-q1e" secondAttribute="leading" id="byP-X6-uDl"/>
+                            <constraint firstItem="B39-qk-b3E" firstAttribute="leading" secondItem="Rv5-Z6-NEP" secondAttribute="leading" id="eVe-D6-tAP"/>
+                            <constraint firstAttribute="trailing" secondItem="B39-qk-b3E" secondAttribute="trailing" id="mkF-bu-fh9"/>
                             <constraint firstAttribute="trailing" secondItem="lFv-QI-q1e" secondAttribute="trailing" id="sel-Ao-IEa"/>
                             <constraint firstItem="lFv-QI-q1e" firstAttribute="leading" secondItem="Rv5-Z6-NEP" secondAttribute="leading" id="zki-8p-WsV"/>
                         </constraints>
@@ -781,6 +795,7 @@
                     <connections>
                         <outlet property="ampmButton" destination="Vzr-kJ-jxy" id="cwc-Vr-BwT"/>
                         <outlet property="dayPicker" destination="lFv-QI-q1e" id="fM2-T7-zaB"/>
+                        <outlet property="noticeLabel" destination="B39-qk-b3E" id="Dfj-uT-cl5"/>
                         <segue destination="2Wg-ep-qA0" kind="unwind" identifier="ConfirmedOrderDateTimeSegue" unwindAction="backToMainView:" id="Izo-Se-Hl6"/>
                     </connections>
                 </viewController>

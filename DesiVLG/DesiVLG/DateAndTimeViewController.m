@@ -50,6 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.timeValid = NO;
+    self.noticeLabel.text = @"";
     //View Size calculation
     int marginSpace = ([[UIScreen mainScreen] bounds].size.width - 90 - 190)/3;
     
@@ -527,9 +528,13 @@
     NSLog(@"%d %d %@ %@ %@",self.hoursCounter,self.minutesCounter,self.selectedDay,self.selectedWeekDay,self.amOrPMString);
     [self validTime];
     if(self.timeValid){
+        self.noticeLabel.text = @"";
+        self.noticeLabel.alpha = 0;
         [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];
     }else{
         NSLog(@"Please pick a valid time!");
+        self.noticeLabel.text = @"Please pick a valid time!";
+        self.noticeLabel.alpha = 0.8;
     }
     
   //  [self performSegueWithIdentifier:@"ConfirmedOrderDateTimeSegue" sender:sender];

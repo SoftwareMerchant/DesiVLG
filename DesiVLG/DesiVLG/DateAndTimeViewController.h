@@ -27,6 +27,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet MZDayPicker *dayPicker;
+@property (weak, nonatomic) IBOutlet UILabel *noticeLabel;
 
 @property (nonatomic, retain) FlipView *flipView;
 @property (nonatomic, retain) FlipView *flipView2;
