@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 
 
-@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate, AddressDelegate>
+@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate, AddressDelegate,UINavigationControllerDelegate>
 @property (nonatomic,retain) CLLocationManager* locationManager;
 @property (nonatomic,strong) CLGeocoder *geocoder;
 @property (nonatomic) bool delivery;
@@ -22,6 +22,20 @@
 @end
 
 @implementation ViewController
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [viewController viewWillAppear:animated];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    for(UIView *subview in self.navigationController.navigationBar.subviews) {
+        if([subview isKindOfClass:[UILabel class]]){
+            subview.hidden = YES;
+            break;
+        }
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,7 +63,6 @@
     
     _geocoder=[[CLGeocoder alloc]init];
     [self location];
-
 }
 
 - (void)didReceiveMemoryWarning {

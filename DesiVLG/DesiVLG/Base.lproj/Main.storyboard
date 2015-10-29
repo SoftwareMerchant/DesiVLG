@@ -105,7 +105,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ITEMS" id="4jA-GW-pbi">
                         <barButtonItem key="backBarButtonItem" title="ITEMS" id="B0T-TJ-nhq"/>
-                        <barButtonItem key="rightBarButtonItem" image="Shopping-Cart.png" id="8dF-uO-GgT">
+                        <barButtonItem key="rightBarButtonItem" image="Shopping-Cart.png" style="plain" id="8dF-uO-GgT">
                             <connections>
                                 <segue destination="EvM-s7-zwo" kind="push" identifier="pushCart" id="xa1-yH-gUh"/>
                             </connections>

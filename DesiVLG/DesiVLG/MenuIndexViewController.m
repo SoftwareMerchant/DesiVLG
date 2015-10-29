@@ -9,17 +9,61 @@
 #import "MenuIndexViewController.h"
 #import "ItemTableViewCell.h"
 #import "ItemDetailViewController.h"
+#import <sqlite3.h>
+#import "DBManager.h"
 
-@interface MenuIndexViewController ()<UITableViewDelegate, UITableViewDataSource >
-
+@interface MenuIndexViewController ()<UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate>
+@property (nonatomic, strong) DBManager *dbManager;
 @end
 
 @implementation MenuIndexViewController
 
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [viewController viewWillAppear:animated];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    if([self.navigationController.navigationBar.subviews count] < 6){
+        UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width - 20, 5, 20, 40)];
+        label1.textColor = [UIColor whiteColor];
+        [self.navigationController.navigationBar addSubview:label1];
+    }
+    [self updateItemsNum];
+}
+
+- (void)updateItemsNum{
+    NSString *sumSQL = @"SELECT SUM(QUANTITY) FROM CART";
+    [self.dbManager executeQuery:sumSQL];
+    int itemsNum = 0;
+    NSArray *result = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:sumSQL]];
+    
+    if (result != nil && [result count] > 0) {
+        itemsNum = [[[result objectAtIndex:0] objectAtIndex:0] intValue];
+    }
+    //    NSLog(@"%lu",[self.navigationController.navigationBar.subviews count]);//6
+    //The last one is the new added label
+    //    UILabel *label = self.navigationController.navigationBar.subviews[5];
+    for(UIView *subview in self.navigationController.navigationBar.subviews) {
+        if([subview isKindOfClass:[UILabel class]]){
+            UILabel *label = subview;
+            [label setText:[NSString stringWithFormat:@"%d",itemsNum]];
+            label.hidden = NO;
+            break;
+        }
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
+    //    NSString *removeSQL = @"drop table cart";
+    //    [self.dbManager executeQuery:removeSQL];
+    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
+    [self.dbManager executeQuery:createSQL];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
     self.MenuCategory = [[NSMutableArray alloc] init];
     self.expSection = [[NSMutableDictionary alloc] init];
     //Form the detail menu

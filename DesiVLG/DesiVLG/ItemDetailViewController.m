@@ -10,15 +10,23 @@
 #import <sqlite3.h>
 #import "DBManager.h"
 
-@interface ItemDetailViewController ()<UITextViewDelegate>
+@interface ItemDetailViewController ()<UITextViewDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) DBManager *dbManager;
-
+@property (nonatomic, strong) IBOutlet UILabel *numLabel;
 
 @end
 
 @implementation ItemDetailViewController
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [viewController viewWillAppear:animated];
+}
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self updateItemsNum];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -55,17 +63,43 @@
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
 //    NSString *removeSQL = @"drop table cart";
 //    [self.dbManager executeQuery:removeSQL];
-    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
-    [self.dbManager executeQuery:createSQL];
+//    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
+//    [self.dbManager executeQuery:createSQL];
+    
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"Shopping-Cart.png"] style:UIBarButtonItemStyleDone target:self action:@selector(viewCart)];
     self.navigationItem.rightBarButtonItem = rightButton;
     
     UITapGestureRecognizer * tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(processTap)];
     [self.view addGestureRecognizer:tapGesturRecognizer];
+    
+    [self updateItemsNum];
+}
+
+- (void)updateItemsNum{
+    NSString *sumSQL = @"SELECT SUM(QUANTITY) FROM CART";
+    [self.dbManager executeQuery:sumSQL];
+    int itemsNum = 0;
+    NSArray *result = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:sumSQL]];
+    
+    if (result != nil && [result count] > 0) {
+        itemsNum = [[[result objectAtIndex:0] objectAtIndex:0] intValue];
+    }
+//    NSLog(@"%lu",[self.navigationController.navigationBar.subviews count]);//6
+    //The last one is the new added label
+//    UILabel *label = self.navigationController.navigationBar.subviews[5];
+    for(UIView *subview in self.navigationController.navigationBar.subviews) {
+        if([subview isKindOfClass:[UILabel class]]){
+            UILabel *label = subview;
+            [label setText:[NSString stringWithFormat:@"%d",itemsNum]];
+            subview.hidden = NO;
+            break;
+        }
+    }
 }
 
 - (void)viewCart{
+    //Hide the number of items in next view
     [self performSegueWithIdentifier:@"viewCart" sender:nil];
 }
 
@@ -146,6 +180,7 @@
 //            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Cong" message:@"You'v added the item(s) successfully!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
 //            [alert show];
             self.tipLabel.text = @"You'v added the item(s) successfully!";
+            [self updateItemsNum];
         }
         else{
             NSLog(@"Could not execute the query.");
@@ -166,6 +201,7 @@
 //            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Cong" message:@"You'v added the item(s) successfully!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
 //            [alert show];
             self.tipLabel.text = @"You'v added the item(s) successfully!";
+            [self updateItemsNum];
         }
         else{
             NSLog(@"Could not execute the query.");

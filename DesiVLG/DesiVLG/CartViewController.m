@@ -31,6 +31,13 @@
     NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
     [self.dbManager executeQuery:createSQL];
     [self loadData];
+
+    for(UIView *subview in self.navigationController.navigationBar.subviews) {
+        if([subview isKindOfClass:[UILabel class]]){
+            subview.hidden = YES;
+            break;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,12 +106,33 @@
 
 - (void)updateCart{
     [self loadData];
+    [self updateItemsNum];
     self.subtotalLabel.text = [NSString stringWithFormat:@"$ %.2f",self.totalPrice];
     self.taxLabel.text = [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate];
     self.totalLabel.text =
     [NSString stringWithFormat:@"$ %.2f",self.totalPrice * self.taxRate + self.totalPrice];
 }
 
+- (void)updateItemsNum{
+    NSString *sumSQL = @"SELECT SUM(QUANTITY) FROM CART";
+    [self.dbManager executeQuery:sumSQL];
+    int itemsNum = 0;
+    NSArray *result = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:sumSQL]];
+    
+    if (result != nil && [result count] > 0) {
+        itemsNum = [[[result objectAtIndex:0] objectAtIndex:0] intValue];
+    }
+    //    NSLog(@"%lu",[self.navigationController.navigationBar.subviews count]);//6
+    //The last one is the new added label
+    //    UILabel *label = self.navigationController.navigationBar.subviews[5];
+    for(UIView *subview in self.navigationController.navigationBar.subviews) {
+        if([subview isKindOfClass:[UILabel class]]){
+            UILabel *label = subview;
+            [label setText:[NSString stringWithFormat:@"%d",itemsNum]];
+            break;
+        }
+    }
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
