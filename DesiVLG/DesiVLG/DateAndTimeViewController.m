@@ -91,10 +91,18 @@
     
     
     
-    self.amOrPMString = currentTimeArray[2];
-    [self.ampmButton setTitle:currentTimeArray[2] forState:UIControlStateNormal];
     int currentHourCounter = [currentTimeArray[0] intValue] + 1;
     self.hoursCounter = currentHourCounter;
+    if(currentHourCounter == 12){
+        if([currentTimeArray[2] isEqualToString:@"AM"]){
+            self.amOrPMString = @"PM";
+        }else{
+            self.amOrPMString = @"AM";
+        }
+    }else{
+        self.amOrPMString = currentTimeArray[2];
+    }
+    [self.ampmButton setTitle:self.amOrPMString forState:UIControlStateNormal];
     int currentMinuteCounter = [currentTimeArray[1] intValue];
     float minuteUnit = ceil((float) currentMinuteCounter / 15.0);
     int currentMinutes = minuteUnit * 15.0;
