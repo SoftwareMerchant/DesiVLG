@@ -150,4 +150,91 @@
     [doneButton2 tap];
     
 }
+
+- (void)testSendEmailOnPhone{
+
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.buttons[@"DELIVERY"] tap];
+    [app.buttons[@"LATER"] tap];
+    
+    XCUIElementQuery *tablesQuery = app.tables;
+    [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"3"].staticTexts[@"Tue"] tap];
+    [app.buttons[@"CONFIRM DATE & TIME"] tap];
+    [app.buttons[@"SELECT YOUR ITEMS"] tap];
+    
+    XCUIElement *addressTextField = app.textFields[@"Address"];
+    [addressTextField tap];
+    
+    [addressTextField typeText:@"4109 "];
+    
+    XCUIElement *shiftButton = app.buttons[@"shift"];
+    [shiftButton tap];
+    [addressTextField typeText:@"Walnut"];
+    [app.buttons[@"Walnut"] tap];
+    [addressTextField typeText:@" "];
+    [shiftButton tap];
+    [addressTextField typeText:@"St"];
+    
+    XCUIElement *deliveryNotesOptionalTextField = app.textFields[@"Delivery Notes(Optional)"];
+    [deliveryNotesOptionalTextField tap];
+    [app.buttons[@"Next keyboard"] tap];
+    [deliveryNotesOptionalTextField typeText:@"🚕"];
+    
+    XCUIElement *cityTownTextField = app.textFields[@"City/Town"];
+    [cityTownTextField tap];
+    [cityTownTextField typeText:@"Philadelphia"];
+    
+    XCUIElement *stateTextField = app.textFields[@"State"];
+    [stateTextField tap];
+    [stateTextField typeText:@"PA"];
+    
+    XCUIElement *doneButton = app.buttons[@"Done"];
+    [doneButton tap];
+
+    
+    XCUIElement *zipCodeTextField = app.textFields[@"Zip Code"];
+    [zipCodeTextField tap];
+    [zipCodeTextField typeText:@"19104"];
+    [doneButton tap];
+    
+    XCUIElement *doneButton2 = app.buttons[@"DONE"];
+    [doneButton2 tap];
+    
+    [tablesQuery.staticTexts[@"LAMB"] tap];
+    [app.tables.staticTexts[@"Achari Lamb"] tap];
+    
+    XCUIElement *element = [[[[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"Dish Details"] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element;
+    XCUIElement *textView = [element childrenMatchingType:XCUIElementTypeTextView].element;
+
+    [textView tap];
+    [textView typeText:@"spicy"];
+    
+    [app.staticTexts[@"Special Instructions?"] tap];
+    
+
+    [app.buttons[@"ADD TO ORDER"] tap];
+    
+    XCUIElement *dishDetailsNavigationBar = app.navigationBars[@"Dish Details"];
+    [dishDetailsNavigationBar.buttons[@"Shopping Cart"] tap];
+    [app.buttons[@"CHECK OUT          "] tap];
+    
+    XCUIElement *pleaseInputYourNameTextField = app.textFields[@"Please Input Your Name"];
+    [pleaseInputYourNameTextField tap];
+    [pleaseInputYourNameTextField typeText:@"Harry Potter"];
+
+    
+    XCUIElement *pleaseInputYourPhoneNumberTextField = app.textFields[@"Please Input Your Phone Number"];
+    [pleaseInputYourPhoneNumberTextField tap];
+    [pleaseInputYourPhoneNumberTextField typeText:@"1234567890"];
+    
+    [app.staticTexts[@"- YOUR CONTACT -"] tap];
+    
+    [app.buttons[@"PAY LATER"] tap];
+    [app.navigationBars.buttons[@"Send"] tap];
+    [app.navigationBars[@"ApplePayView"].buttons[@"Your Order"] tap];
+    [app.navigationBars[@"Your Order"].buttons[@"Dish Details"] tap];
+    [dishDetailsNavigationBar.buttons[@"ITEMS"] tap];
+    [app.navigationBars[@"ITEMS"].buttons[@"Options"] tap];
+    
+}
 @end

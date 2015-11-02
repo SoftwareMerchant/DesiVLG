@@ -141,7 +141,7 @@
     
     animationDelegate = [[AnimationDelegate alloc] initWithSequenceType:kSequenceControlled
                                                           directionType:kDirectionForward];
-    animationDelegate.controller = self;
+    animationDelegate.controller = self; 
     animationDelegate.perspectiveDepth = 2000;
     
     

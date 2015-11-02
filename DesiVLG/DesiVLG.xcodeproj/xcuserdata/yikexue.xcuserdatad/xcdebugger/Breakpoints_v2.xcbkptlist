@@ -538,12 +538,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/ApplePayViewController.m"
-            timestampString = "467575187.056514"
+            timestampString = "468192116.243976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "255"
             endingLineNumber = "255"
-            landmarkName = "-mailComposeController:didFinishWithResult:error:"
+            landmarkName = "-EmailButtonAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -848,6 +848,38 @@
             startingLineNumber = "89"
             endingLineNumber = "89"
             landmarkName = "-updateItemsNum"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesiVLGUITests/DesiVLGUITests.m"
+            timestampString = "468194210.836741"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "-testSendEmailOnPhone"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesiVLGUITests/DesiVLGUITests.m"
+            timestampString = "468194359.633379"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "-testSendEmailOnPhone"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -38,7 +38,7 @@
 - (void)dealloc
 {
     [imageStackArray removeAllObjects];
-
+    [super dealloc];
 }
 
 - (BOOL)printText:(NSString *)tickerString 
