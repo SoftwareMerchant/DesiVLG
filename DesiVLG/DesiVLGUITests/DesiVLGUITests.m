@@ -69,12 +69,13 @@
     [laterButton tap];
     [pmButton tap];
     
-    XCUIElementQuery *tablesQuery = app.tables;
-    XCUIElement *wedStaticText = [tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"28"].staticTexts[@"Wed"];
-    [wedStaticText tap];
-    [wedStaticText tap];
-    [confirmDateTimeButton tap];
-    [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"29"].staticTexts[@"Thu"] tap];
+    //Test date difference, element name different
+//    XCUIElementQuery *tablesQuery = app.tables;
+//    XCUIElement *wedStaticText = [tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"28"].staticTexts[@"Wed"];
+//    [wedStaticText tap];
+//    [wedStaticText tap];
+//    [confirmDateTimeButton tap];
+//    [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"29"].staticTexts[@"Thu"] tap];
     [confirmDateTimeButton tap];
     [app.navigationBars[@"Order for Later"].buttons[@"Options"] tap];
     
@@ -151,7 +152,52 @@
     
 }
 
-- (void)testSendEmailOnPhone{
+- (void)testShoppingCart{
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.buttons[@"SELECT YOUR ITEMS"] tap];
+    
+    XCUIElementQuery *tablesQuery = app.tables;
+    XCUIElement *beveragesStaticText = tablesQuery.staticTexts[@"BEVERAGES"];
+    [beveragesStaticText tap];
+    [tablesQuery.staticTexts[@"Lassi"] tap];
+    
+    XCUIElement *addToOrderButton = app.buttons[@"ADD TO ORDER"];
+    [addToOrderButton tap];
+    
+    XCUIElement *dishDetailsNavigationBar = app.navigationBars[@"Dish Details"];
+    XCUIElement *shoppingCartButton = dishDetailsNavigationBar.buttons[@"Shopping Cart"];
+    [shoppingCartButton tap];
+    
+    XCUIElement *yourOrderNavigationBar = app.navigationBars[@"Your Order"];
+    [yourOrderNavigationBar.buttons[@"Clear"] tap];
+    [app.alerts[@"Warning"].collectionViews.buttons[@"Sure"] tap];
+    [yourOrderNavigationBar.buttons[@"Dish Details"] tap];
+    [app.buttons[@"2"] tap];
+    
+    XCUIElement *textView = [[[[[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"Dish Details"] childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeOther].element childrenMatchingType:XCUIElementTypeTextView].element;
+    [textView tap];
+    [textView typeText:@"No ice"];
+    [app.staticTexts[@"Special Instructions?"] tap];
+    [addToOrderButton tap];
+    [dishDetailsNavigationBar.buttons[@"ITEMS"] tap];
+    [beveragesStaticText tap];
+    
+    tablesQuery = app.tables;
+    [tablesQuery.staticTexts[@"VEGETARIAN APPETIZER"] tap];
+    [tablesQuery.staticTexts[@"Bhel Puri"] tap];
+    [addToOrderButton tap];
+    [shoppingCartButton tap];
+    [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"2"].buttons[@"minus alt"] tap];
+    [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"Lassi($2.95)"].buttons[@"minus alt"] tap];
+    [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"1"].buttons[@"plus alt"] tap];
+    [[tablesQuery.cells containingType:XCUIElementTypeStaticText identifier:@"0"].buttons[@"plus alt"] tap];
+    [app.buttons[@"CHECK OUT          "] tap];
+    [app.navigationBars[@"ApplePayView"].buttons[@"Your Order"] tap];
+    
+}
+
+- (void)testSubmitOrder{
 
     XCUIApplication *app = [[XCUIApplication alloc] init];
     [app.buttons[@"DELIVERY"] tap];
@@ -165,15 +211,16 @@
     XCUIElement *addressTextField = app.textFields[@"Address"];
     [addressTextField tap];
     
-    [addressTextField typeText:@"4109 "];
+    //***Test for real device and simulator are different
+    [addressTextField typeText:@"4109 Walnut St"];
     
-    XCUIElement *shiftButton = app.buttons[@"shift"];
-    [shiftButton tap];
-    [addressTextField typeText:@"Walnut"];
-    [app.buttons[@"Walnut"] tap];
-    [addressTextField typeText:@" "];
-    [shiftButton tap];
-    [addressTextField typeText:@"St"];
+//    XCUIElement *shiftButton = app.buttons[@"shift"];
+//    [shiftButton tap];
+//    [addressTextField typeText:@"Walnut"];
+//    [app.buttons[@"Walnut"] tap];
+//    [addressTextField typeText:@" "];
+//    [shiftButton tap];
+//    [addressTextField typeText:@"St"];
     
     XCUIElement *deliveryNotesOptionalTextField = app.textFields[@"Delivery Notes(Optional)"];
     [deliveryNotesOptionalTextField tap];
@@ -229,8 +276,14 @@
     
     [app.staticTexts[@"- YOUR CONTACT -"] tap];
     
-    [app.buttons[@"PAY LATER"] tap];
-    [app.navigationBars.buttons[@"Send"] tap];
+    //***Test for real device and simulator are different
+//    [app.buttons[@"PAY LATER"] tap];
+//    [app.navigationBars.buttons[@"Send"] tap];
+    
+//    [app.buttons[@"applePay"] tap];
+//    [app.navigationBars[@"PKPaymentAuthorizationServiceView"].buttons[@"Cancel"] tap];
+    
+    
     [app.navigationBars[@"ApplePayView"].buttons[@"Your Order"] tap];
     [app.navigationBars[@"Your Order"].buttons[@"Dish Details"] tap];
     [dishDetailsNavigationBar.buttons[@"ITEMS"] tap];

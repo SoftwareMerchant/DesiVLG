@@ -101,6 +101,8 @@
 -(void)clearConfirm{
     NSString *removeSQL = @"drop table if exists cart";
     [self.dbManager executeQuery:removeSQL];
+    NSString *createSQL = @"CREATE TABLE IF NOT EXISTS CART (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM TEXT, QUANTITY INTEGER, PRICE FLOAT, NOTE TEXT);";
+    [self.dbManager executeQuery:createSQL];
     [self loadData];
 }
 

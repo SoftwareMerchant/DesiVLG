@@ -44,17 +44,15 @@
     self.delivery = NO;
     [self.deliveryBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.pickUpBtn.enabled = NO;
-//    self.deliveryBtn.enabled = YES;
     
     self.mapView.delegate=self;
     //request for location service
     _locationManager=[[CLLocationManager alloc]init];
     _locationManager.delegate = self;
     if(![CLLocationManager locationServicesEnabled]||[CLLocationManager authorizationStatus]!=kCLAuthorizationStatusAuthorizedWhenInUse){
-        [_locationManager requestWhenInUseAuthorization];
+        [_locationManager requestAlwaysAuthorization];
         
     }
-    [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     _locationManager.delegate = self;
     [_locationManager startUpdatingLocation];
     
@@ -140,34 +138,12 @@
     annotation.subtitle=@"4527 Baltimore Ave, Philadelphia, PA 19143";
     annotation.coordinate=location;
     self.curSelectedPin = annotation;
-    //    float maxLat,minLat;
-    //    float maxLong,minLong;
-    //    if(_locationManager.location.coordinate.latitude > location.latitude){
-    //        maxLat = _locationManager.location.coordinate.latitude;
-    //        minLat = location.latitude;
-    //    }else{
-    //        minLat = _locationManager.location.coordinate.latitude;
-    //        maxLat = location.latitude;
-    //    }
-    //    if(_locationManager.location.coordinate.longitude > location.longitude){
-    //        maxLong = _locationManager.location.coordinate.longitude;
-    //        minLong = location.longitude;
-    //    }else{
-    //        minLong = _locationManager.location.coordinate.longitude;
-    //        maxLong = location.longitude;
-    //    }
     
     MKCoordinateRegion region = _mapView.region;
     region.center = location;
-    region.span.latitudeDelta = 0.01;//(maxLat - minLat) * 3;
-    //    if((region.span.latitudeDelta < 0.0001 && region.span.latitudeDelta > 0) || (region.span.latitudeDelta < 0 && region.span.latitudeDelta > -0.0001)){
-    //        region.span.latitudeDelta = 0.1;
-    //    }
-    region.span.longitudeDelta = 0.01;//(maxLong - minLong) * 3;
-    //    if((region.span.longitudeDelta < 0.0001 && region.span.longitudeDelta > 0) ||(region.span.longitudeDelta < 0 && region.span.longitudeDelta > -0.0001)){
-    //        region.span.longitudeDelta = 0.1;
-    //    }
-    //
+    region.span.latitudeDelta = 0.01;
+    region.span.longitudeDelta = 0.01;
+
     [self.mapView setRegion:region animated:YES];
     [self.mapView addAnnotation:annotation];
     [self.mapView selectAnnotation:annotation animated:YES];
@@ -241,27 +217,30 @@
 
 -(void)pinButtonTapped:(id)sender
 {
-    //AnnotationViewController *ann1 =[sender superview];
-    //NSString *str = ann1.title;
-    MyPin *ann = self.curSelectedPin;
-    CLLocationCoordinate2D to =[ann coordinate];
-    CLLocationCoordinate2D from = _locationManager.location.coordinate;
-    NSLog(@"Go navigation!");
-    MKMapItem *currentLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:from addressDictionary:nil]];
-
-    MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:to addressDictionary:nil]];
-    currentLocation.name = @"current location";
-    toLocation.name = ann.title;
-    NSArray *items = [NSArray arrayWithObjects:currentLocation, toLocation, nil];
-    
-    NSDictionary *options = @{
-                              MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving,
-                              MKLaunchOptionsMapTypeKey:
-                                  [NSNumber numberWithInteger:MKMapTypeStandard],
-                              MKLaunchOptionsShowsTrafficKey:@YES
-                              };
-    //Using apple map
-    [MKMapItem openMapsWithItems:items launchOptions:options];
+    if(![CLLocationManager locationServicesEnabled]||[CLLocationManager authorizationStatus]!=kCLAuthorizationStatusAuthorizedWhenInUse){
+        [_locationManager requestWhenInUseAuthorization];
+        
+    }else{
+        MyPin *ann = self.curSelectedPin;
+        CLLocationCoordinate2D to =[ann coordinate];
+        CLLocationCoordinate2D from = _locationManager.location.coordinate;
+        NSLog(@"Go navigation!");
+        MKMapItem *currentLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:from addressDictionary:nil]];
+        
+        MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:to addressDictionary:nil]];
+        currentLocation.name = @"current location";
+        toLocation.name = ann.title;
+        NSArray *items = [NSArray arrayWithObjects:currentLocation, toLocation, nil];
+        
+        NSDictionary *options = @{
+                                  MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving,
+                                  MKLaunchOptionsMapTypeKey:
+                                      [NSNumber numberWithInteger:MKMapTypeStandard],
+                                  MKLaunchOptionsShowsTrafficKey:@YES
+                                  };
+        //Using apple map
+        [MKMapItem openMapsWithItems:items launchOptions:options];
+    }
     
 }
 

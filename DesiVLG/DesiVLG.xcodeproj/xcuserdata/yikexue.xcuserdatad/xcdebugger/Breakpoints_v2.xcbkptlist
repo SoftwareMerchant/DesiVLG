@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/CartViewController.m"
-            timestampString = "467844423.228742"
+            timestampString = "468348781.8293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-numberOfSectionsInTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/CartViewController.m"
-            timestampString = "467844423.228742"
+            timestampString = "468348781.8293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/CartViewController.m"
-            timestampString = "467844310.271138"
+            timestampString = "468348781.8293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-updateCart"
             landmarkType = "5">
          </BreakpointContent>
@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/ViewController.m"
-            timestampString = "467843805.9751"
+            timestampString = "468345311.123508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "-addAddressSuccess"
             landmarkType = "5">
          </BreakpointContent>
@@ -410,92 +410,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/ViewController.m"
-            timestampString = "467843805.9751"
+            timestampString = "468345311.123508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "-addAddressSuccess"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DesiVLG/ApplePayViewController.m"
-            timestampString = "467575187.056514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "-writeToTextFile"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DesiVLG/ApplePayViewController.m"
-            timestampString = "467575187.056514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-writeToTextFile"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ApplePayViewController writeToTextFile]"
-                  moduleName = "DesiVLG"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yikexue/Documents/iOS/project/Desi%20Village/DesiVLG/DesiVLG/DesiVLG/ApplePayViewController.m"
-                  timestampString = "467139562.537418"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "1831">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ApplePayViewController writeToTextFile]"
-                  moduleName = "DesiVLG"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yikexue/Documents/iOS/project/Desi%20Village/DesiVLG/DesiVLG/DesiVLG/ApplePayViewController.m"
-                  timestampString = "467139562.537609"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "1839">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DesiVLG/ApplePayViewController.m"
-            timestampString = "467575187.056514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "-writeToTextFile"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -666,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/ViewController.m"
-            timestampString = "467843805.9751"
+            timestampString = "468344384.098425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "-addAnnotation"
             landmarkType = "5">
          </BreakpointContent>
@@ -682,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/ViewController.m"
-            timestampString = "467843805.9751"
+            timestampString = "468344384.098425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -826,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLG/ViewController.m"
-            timestampString = "467843805.9751"
+            timestampString = "468344384.098425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-addAnnotation"
             landmarkType = "5">
          </BreakpointContent>
@@ -858,12 +778,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLGUITests/DesiVLGUITests.m"
-            timestampString = "468194210.836741"
+            timestampString = "468349046.71306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "-testSendEmailOnPhone"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "-testSubmitOrder"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -874,12 +794,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DesiVLGUITests/DesiVLGUITests.m"
-            timestampString = "468194359.633379"
+            timestampString = "468347706.04984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "-testSendEmailOnPhone"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-testShoppingCart"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

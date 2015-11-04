@@ -140,54 +140,54 @@
 }
 
 
-//Method writes a string to a text file
--(void) writeToTextFile{
-    //get the documents directory:
-    NSArray *paths = NSSearchPathForDirectoriesInDomains
-    (NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    
-    //make a file name to write the data to using the documents directory:
-    NSString *fileName = [NSString stringWithFormat:@"%@/newOrder.txt",
-                          documentsDirectory];
-    //create content
-    NSMutableString *content = [[NSMutableString alloc] init];
-    [content appendFormat:@"Order From %@(Phone:%@).\n\n",self.nameInput.text,self.phoneInput.text];
-    //Set order options
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    OrderOptions *options = delegate.myOrderOptions;
-    if(options.destination == nil){
-        [content appendString:@"Pick Up In Store.\n-------------------------"];
-    }else{
-        [content appendFormat:@"Delivery Address\n************************\nStreet:%@\nCity:%@\nState:%@\nZipcode:%@\nNote:%@\n-------------------------\n",options.destination.addr,options.destination.city,options.destination.state,options.destination.zip,options.destination.note];
-    }
-    NSDateFormatter *formatter;
-    NSString        *dateString;
-    formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
-    dateString = [formatter stringFromDate:[NSDate date]];
-    [content appendFormat:@"\nCurrent Date:%@\n-------------------------\n",dateString];
-    if(options.time != nil){
-        [content appendFormat:@"Want it on %@, %@ @ %d:%d %@", options.time.selectedDay,options.time.selectedWeekDay,options.time.hours,options.time.minutes,options.time.amPM];
-    }else{
-        [content appendString:@"Want it ASPS"];
-    }
-    
-    [content appendString:@"Item(s)\n************************\n"];
-    
-    for(NSArray *item in self.itemArray){
-        [content appendFormat:@"Name:%@\nQuantity:%d/nPrice:%.2f\nNote:%@\n+++++++++++++++++++++++++++++\n",[item objectAtIndex:1] ,[[item objectAtIndex:2] intValue], [[item objectAtIndex:3] floatValue], [item objectAtIndex:4]];
-    }
-
-    [content appendFormat:@"-------------------------\n\nSubtotal:%.2f\nTax:%.2f\nGrand Total:%.2f",self.subtotal,self.tax,self.subtotal+self.tax];
-    
-    //save content to the documents directory
-    [content writeToFile:fileName
-              atomically:NO
-                encoding:NSStringEncodingConversionAllowLossy
-                   error:nil];
-    
-}
+////Method writes a string to a text file
+//-(void) writeToTextFile{
+//    //get the documents directory:
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains
+//    (NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    
+//    //make a file name to write the data to using the documents directory:
+//    NSString *fileName = [NSString stringWithFormat:@"%@/newOrder.txt",
+//                          documentsDirectory];
+//    //create content
+//    NSMutableString *content = [[NSMutableString alloc] init];
+//    [content appendFormat:@"Order From %@(Phone:%@).\n\n",self.nameInput.text,self.phoneInput.text];
+//    //Set order options
+//    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+//    OrderOptions *options = delegate.myOrderOptions;
+//    if(options.destination == nil){
+//        [content appendString:@"Pick Up In Store.\n-------------------------"];
+//    }else{
+//        [content appendFormat:@"Delivery Address\n************************\nStreet:%@\nCity:%@\nState:%@\nZipcode:%@\nNote:%@\n-------------------------\n",options.destination.addr,options.destination.city,options.destination.state,options.destination.zip,options.destination.note];
+//    }
+//    NSDateFormatter *formatter;
+//    NSString        *dateString;
+//    formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+//    dateString = [formatter stringFromDate:[NSDate date]];
+//    [content appendFormat:@"\nCurrent Date:%@\n-------------------------\n",dateString];
+//    if(options.time != nil){
+//        [content appendFormat:@"Want it on %@, %@ @ %d:%d %@", options.time.selectedDay,options.time.selectedWeekDay,options.time.hours,options.time.minutes,options.time.amPM];
+//    }else{
+//        [content appendString:@"Want it ASPS"];
+//    }
+//    
+//    [content appendString:@"Item(s)\n************************\n"];
+//    
+//    for(NSArray *item in self.itemArray){
+//        [content appendFormat:@"Name:%@\nQuantity:%d/nPrice:%.2f\nNote:%@\n+++++++++++++++++++++++++++++\n",[item objectAtIndex:1] ,[[item objectAtIndex:2] intValue], [[item objectAtIndex:3] floatValue], [item objectAtIndex:4]];
+//    }
+//
+//    [content appendFormat:@"-------------------------\n\nSubtotal:%.2f\nTax:%.2f\nGrand Total:%.2f",self.subtotal,self.tax,self.subtotal+self.tax];
+//    
+//    //save content to the documents directory
+//    [content writeToFile:fileName
+//              atomically:NO
+//                encoding:NSStringEncodingConversionAllowLossy
+//                   error:nil];
+//    
+//}
 
 - (IBAction)sendEmail:(id)sender {
     self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ShoppingCart"];
@@ -256,7 +256,7 @@
         [content appendString:@"\n***********************************\n"];
         [controller setMessageBody:content isHTML:NO];
         [controller setSubject:[NSString stringWithFormat: @"%@ Order from %@",dateString,self.nameInput.text]];
-        [controller setToRecipients:[NSArray arrayWithObjects:@"yike_xue@softwaremerchant.com",nil]];
+        [controller setToRecipients:[NSArray arrayWithObjects:@"desivillage@hotmail.com",nil]];
 //        [self writeToTextFile];
 //        NSArray *paths = NSSearchPathForDirectoriesInDomains
 //        (NSDocumentDirectory, NSUserDomainMask, YES);
